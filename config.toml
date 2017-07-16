@@ -6,3 +6,4 @@ pygmentscodefences = "true"
 pygmentscodefencesguesssyntax = false
 pygmentsstyle = "trac"
 pygmentsuseclasses = false
+disableHugoGeneratorInject = true
