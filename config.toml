@@ -7,3 +7,22 @@ pygmentscodefencesguesssyntax = false
 pygmentsstyle = "trac"
 pygmentsuseclasses = false
 disableHugoGeneratorInject = true
+[params]
+	# hljs_style = "light"
+	hljs_style = "dark"
+
+	# highlightjs - light themes
+	hljs_style_light = "gruvbox-light"
+	# hljs_style_light = "kimbie.light"
+	# hljs_style_light = "purebasic"
+	# hljs_style_light = "solarized-light"
+
+	# highlightjs - dark themes
+	# hljs_style_dark = "atom-one-dark"
+	hljs_style_dark = "gruvbox-dark"
+	# hljs_style_dark = "hopscotch"
+	# hljs_style_dark = "kimbie.dark"
+	# hljs_style_dark = "ocean"
+	# hljs_style_dark = "solarized-dark"
+	# hljs_style_dark = "tomorrow-night-eighties"
+	# hljs_style_dark = "zenburn"
