@@ -7,6 +7,20 @@
 		<meta name="author" content="bep">
 		<link rel="stylesheet" href="{{ "bootstrap/bootstrap.min.css" | relURL }}">
 		<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+
+		{{ if eq .Site.Params.hljs_style "light" }}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{ .Site.Params.hljs_style_light }}.min.css">
+		<link rel="stylesheet" href="highlight/styles/light/{{ .Site.Params.hljs_style_light }}.min.css">
+		{{ end }}
+
+		{{ if eq .Site.Params.hljs_style "dark" }}
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{ .Site.Params.hljs_style_dark }}.min.css">
+		<link rel="stylesheet" href="highlight/styles/dark/{{ .Site.Params.hljs_style_dark }}.min.css">
+		{{ end }}
+
+		<script src="{{ "highlight/highlight.min.js" | relURL }}"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+
 	</head>
 	<body>
 		<div class="container">
