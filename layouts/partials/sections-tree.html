@@ -1,25 +1,62 @@
+
 {{ $home := .Site.Home }}
-<div class="css-treeview box">
-	<ul>
-		<li><input type="checkbox" id="item-0" checked="checked" /><label for="item-0">Home</label>
-		<ul>
-		{{ template "section-tree-nav" $home }}
-		</ul>
-	</ul>
+
+
+<div class="css-treeview" style="padding-bottom: 10px;">
+	<!-- <li class="pagelink"><a href="{{ $home.Permalink }}#top">Home</a> -->
+	{{ template "section-tree-nav" $home }}
 </div>
+
+
 {{ define "section-tree-nav" }}
-{{ range .Sections.Reverse}}
-<li>
-	<li><input type="checkbox" id="item-0-0" checked="checked"/><label for="item-0-0">{{ .Title }}</label>
-	<ul>
-		{{ range .Pages }}
-		<li><a href="{{ .RelPermalink}}">{{ .Title }}</a></li>
-		{{ end }}
-		<ul>
-		{{ template "section-tree-nav" . }}
+
+	<li class="pagelink">
+	<!-- S  -->
+	<a class="pagelink" href="{{ .RelPermalink}}#top">{{ .Title }}</a>
+	</li>
+
+	<!-- if home page -->
+	{{ if not .Section }}
+		{{ $.Scratch.Set "children" (where .Pages "Section" "") }}
+	{{ end }}
+
+	<!-- if a section -->
+	{{ if .Section }}
+		{{ $.Scratch.Set "children" .Pages }}
+	{{ end }}
+
+	{{ $children := $.Scratch.Get "children" }}
+
+	{{ if($children) }}
+		<ul class="pagelink">
+	{{ end }}
+
+	{{ range $children }}
+		<li class="pagelink">
+			<!-- P -->
+			<a class="pagelink" href="{{ .RelPermalink}}#top">{{ .Title }}</a>
+		</li>
+	{{ end }}
+
+	{{ if($children) }}
 		</ul>
-	</ul>
-</li>
-</li>
+	{{ end }}
+
+	<!-- newly added -->
+	{{ if(.Sections) }}
+		<ul class="pagelink">
+	{{ end }}
+
+	{{ range .Sections }}
+		{{ template "section-tree-nav" . }}
+	{{ end }}
+
+	<!-- newly added -->
+	{{ if(.Sections) }}
+		</ul>
+	{{ end }}
+
 {{ end }}
-{{ end }}
+
+
+
