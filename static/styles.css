@@ -68,21 +68,7 @@ footer p { clear: left; margin-bottom: 0 }
  * http://experiments.wemakesites.net/miscellaneous/acidjs-css3-treeview/
  **/
 
-.css-treeview ul, .css-treeview li { padding: 0; margin: 0; list-style: none; }
-.css-treeview input { position: absolute; opacity: 0; }
-.css-treeview { font: normal 11px; -moz-user-select: none; -webkit-user-select: none; user-select: none; }
-.css-treeview a {  text-decoration: none; }
-.css-treeview a:hover { text-decoration: underline; }
-.css-treeview input + label + ul { margin: 0 0 0 22px; }
-.css-treeview input ~ ul { display: none; }
-.css-treeview label, .css-treeview label::before { cursor: pointer; }
-.css-treeview input:disabled + label { cursor: default; opacity: .6; }
-.css-treeview input:checked:not(:disabled) ~ ul { display: block; }
-.css-treeview label, .css-treeview label::before { background: url("icons.png") no-repeat; }
-.css-treeview label, .css-treeview a, .css-treeview label::before { display: inline-block; height: 16px; line-height: 16px; vertical-align: middle; }
-.css-treeview label { background-position: 18px 0; }
-.css-treeview label::before { content: ""; width: 16px; margin: 0 22px 0 0; vertical-align: middle; background-position: 0 -32px; }
-.css-treeview input:checked + label::before { background-position: 0 -16px; }
+
 
 /* webkit adjacent element selector bugfix */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
@@ -91,4 +77,56 @@ footer p { clear: left; margin-bottom: 0 }
 		from { padding: 0; }
 		to { padding: 0; }
 	}
+}
+
+.css-treeview a, .pagenav a {
+	text-decoration: none !important;
+}
+
+.css-treeview ul, .css-treeview ol, .css-treeview li {
+
+	margin: 0;
+	padding-left: 7px;
+
+	/*padding-left: 0px;*/
+	/*margin-left: -7px;*/
+
+	/*border-left: -7px;*/
+
+	list-style-type: none;
+	background-color: default;
+	/*all: default;*/
+}
+
+.css-treeview a:hover,.css-treeview a:focus {
+ color:rgba(255,255,255,0.75);
+ background-color:transparent
+}
+
+
+.css-treeview .active>a,.pagenav .active>a {
+ /*color:#ffffff;*/
+ /*color:#888888;*/
+ color:#888fff;
+
+ /*background-color:#962d36;*/
+ /*text-background:#962d36;*/
+
+}
+
+
+.css-treeview .active,.pagenav .active {
+  /* whole width, child li background spanning, not indented like the text */
+  padding: 0px 52px 0px 52px;
+  margin-left: -45px;
+  /*margin-right: -45px;*/
+
+  background-color: #962d36;
+
+  color:#888888;
+  /*background-color:#262d36;*/
+  background-color:#264d36;
+  /*background-color:#962d36;*/
+  /*background-color:#D8C4A2;*/
+
 }
