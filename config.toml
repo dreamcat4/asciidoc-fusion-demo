@@ -8,6 +8,10 @@ pygmentsstyle = "trac"
 pygmentsuseclasses = false
 disableHugoGeneratorInject = true
 [params]
+	git_host = "https://github.com"
+	# git_host = "https://gitlab.com"
+	git_repo = "dreamcat4/hugotest"
+
 	# hljs_style = "light"
 	hljs_style = "dark"
 
