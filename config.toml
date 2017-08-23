@@ -1,6 +1,9 @@
 baseURL = "http://hugotest.bep.is"
 title = "Hugo Test Site"
 paginate = 2
+#  allows us to access Git revision information in theme files like author name, email, hash, and date
+# this also needs to be implemented in the theme
+enableGitInfo = true
 
 disableHugoGeneratorInject = true
 # hugo pygments support works only for native formats like markdown, not asciidoctor

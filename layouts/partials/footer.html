@@ -15,7 +15,21 @@
 
 </br>
 {{ if .GitInfo }}
-{{ .GitInfo }}
+</br>
+{{ .GitInfo.AuthorName }}
+</br>
+{{ .GitInfo.AbbreviatedHash }}
+</br>
+{{ .GitInfo.Hash }}
+</br>
+{{ .GitInfo.AuthorName }}
+</br>
+{{ .GitInfo.AuthorEmail }}
+</br>
+{{ .GitInfo.AuthorDate }}
+</br>
+{{ .GitInfo.Subject }}
+</br>
 {{ else }}
 Page not added in Git yet
 {{ end }}
