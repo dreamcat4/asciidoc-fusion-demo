@@ -1,0 +1,48 @@
+<!-- Generate a nice TOC -->
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js"></script>
+<!-- We do not need the tocify CSS because the asciidoc CSS already provides most of what we neeed -->
+
+
+
+<nav class="col-md-3-mod-toc">
+<!-- <nav class="toc2"> -->
+
+    <div class="css-treeview">
+
+    {{ $page_url := .URL }}
+
+        <ul class="pagelink">
+            <li>
+            <a href="{{ $page_url }}#top">
+            Top
+            </a>
+            </li>
+        </ul>
+
+    {{ $headers := findRE "<h[0-9][0-9]*.*?>(.|\n)*?</h[0-9][0-9]*>" .Content }}
+    {{ if ge (len $headers) 1 }}
+        <ul class="pagelink">
+<!--             <li>
+            <a href="{{ $page_url }}#">
+            Top
+            </a>
+            </li>
+ -->
+            {{ range $headers }}
+            <li>
+                {{ $level  := int ((index (findRE "<h[0-9][0-9]*" . 1) 0) | replaceRE "<h" "") }}
+                {{ $indent := mul 5 $level|string }}
+                {{ $anchor := (index (findRE "id=\"([^ ]*)\"" . 1) 0) | replaceRE "id=\"" "" | replaceRE "\"" "" }}
+                <!-- <a href="{{ $page_url }}#{{ $anchor }}" style="padding-left: {{ $indent }}px;"> -->
+                <a href="#{{ $anchor }}" style="padding-left: {{ $indent }}px;">
+                <!-- {{ . | plainify | truncate 25 }} -->
+                {{ . | plainify }}
+                </a>
+            </li>
+            {{ end }}
+        </ul>
+    {{ end }}
+    </div>
+</nav>

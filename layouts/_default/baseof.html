@@ -5,6 +5,7 @@
 		<title>Hugo Test Site</title>
 		<meta name="description" content="Hugo Test Site">
 		<meta name="author" content="bep">
+		<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
 		<link rel="stylesheet" href="{{ "bootstrap/bootstrap.min.css" | relURL }}">
 		<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
 
@@ -23,39 +24,226 @@
 
 	</head>
 	<body>
-		<div class="container">
-			<div class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
-					<div class="navbar-header">
-						<a href="{{ .Site.Home.RelPermalink }}" class="navbar-brand">Hugo Test</a>
-						<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						</button>
-					</div>
-					<div class="navbar-collapse collapse" id="navbar-main">{{ partial "sections-nav.html" . }}</div>
-				</div>
-			</div>
-			<div class="box">
-				{{block "main" .}}This is the main content.{{end}}
-			</div>
-			<h3>Section Tree</h3>
-			{{ partial "sections-tree.html" . }}
-			<div class="box">
-				{{ if .IsNode }}
-				{{ template "_internal/pagination.html" . }}
-				{{ else }}
-				<a class="btn btn-lg btn-default{{if not .PrevInSection}} disabled{{end}}" href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}"> Older</a>
-				<a class="btn btn-lg btn-primary{{if not .NextInSection}} disabled{{end}}" href="{{if .NextInSection}}{{.NextInSection.Permalink}}{{end}}">Newer</a>
-				{{ end }}
-			</div>
-			{{ with .Parent }}
-			<div class="box">
-				<a class="btn btn-lg btn-info" href="{{ .RelPermalink }}">Up One Level</a>
-			</div>
-			{{ end }}
+
+	<header class="site-header">
+		<div class="navbar">
+
+
+		<div id="navbuttons-zzz" style="padding-top: 12px; padding-left: 5px; padding-bottom: 12px;">
+			<a class="btn btn-site-prev btn-sm btn-info disabled" href="">&nbsp;<< Prev&nbsp;</a>
+			<a class="btn btn-site-up btn-sm btn-default disabled" href="{{ template "site-up-permalink" . }}#top">&nbsp;&nbsp;Up ^&nbsp;&nbsp;</a>
+			<a class="btn btn-site-next btn-sm btn-primary disabled" href="">&nbsp;Next >>&nbsp;</a>
 		</div>
+
+		<div class="navbar-default navbar-fixed-top navbar-override">
+
+				<div class="navbar-header">
+					<!-- <a href="{{ .Site.Home.RelPermalink }}#top" class="navbar-brand">Hugo Test</a> -->
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					</button>
+				</div>
+
+
+				<div class="navbar-collapse collapse" id="navbar-main" style="">
+				<nav class="navbar-left" style="float: left;">
+					{{ partial "sections-nav.html" . }}
+				</nav>
+
+						<nav class="navbar-right">
+
+							<ol class="nav navbar-nav" style="margin-right:0px;">
+
+							<li class="pagelink">
+
+					        <a href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}" class="navlink">
+					            <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit Source
+					        </a>
+
+							</li>
+							<li class="pagelink">
+
+							{{ if(eq .Site.Params.git_host "https://github.com") }}
+					        <a href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?title=Page - {{ .Title }}&amp;body=From Page: {{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}" class="navlink"><!-- &amp;labels=dev: docs - website -->
+					            <i class="fa fa-github"></i>&nbsp;&nbsp;File Issue
+					        </a>
+							{{ end }}
+
+							{{ if(eq .Site.Params.git_host "https://gitlab.com") }}
+					        <a href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuable_template=&amp;issue[title]=Page - {{ .Title }}&amp;issue[description]=From Page: {{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}&amp;labels=dev: docs - website" class="navlink">
+					            <i class="fa fa-gitlab"></i>&nbsp;&nbsp;File Issue
+					        </a>
+							{{ end }}
+							</li>
+							</ol>
+					</nav>
+
+				</div>
+		</div>
+		</div>
+
+</header>
+
+		<div class="scrollable container-fluid contents">
+
+		<div class="sidebar" id="sidebar-zzz">
+			<div class="silentscroll">
+			<!-- sidebar -->
+			<div style="padding-top: 12px; padding-left: 5px; padding-bottom: 12px; border-bottom: 1px solid #dddddd;">
+				<a class="btn btn-site-prev btn-sm btn-info disabled" href="">&nbsp;<< Prev&nbsp;</a>
+				<a class="btn btn-site-up btn-sm btn-default disabled" href="{{ template "site-up-permalink" . }}#top">&nbsp;&nbsp;Up ^&nbsp;&nbsp;</a>
+				<a class="btn btn-site-next btn-sm btn-primary disabled" href="">&nbsp;Next >>&nbsp;</a>
+			</div>
+			<p>
+			{{ partial "sections-tree.html" . }}
+
+			{{ define "site-up-permalink" }}{{ if .Parent }}{{ .Parent.Permalink }}{{ end }}{{ if not .Parent }}{{ .Permalink }}{{ end }}{{ end }}
+
+			</div>
+		</div>
+
+
+		<div class="pagenav" id="pagenav-zzz">
+			<!-- pagenav -->
+			<h2>This page</h2>
+			    {{ partial "toc.html" . }}
+		</div>
+
+		<script>
+			//this makes the current link containing li of class "active"
+		    var thispage = window.location.href;
+		    var pageobject = null;
+		    var pageobjectPrev = null;
+		    var pageobjectNext = null;
+
+		    // highlight current page in top navbar
+		    $('a.navlink').each(function () {
+		        var thislink = this.href;
+
+		        if (thispage.split("#")[0] == thislink.split("#")[0]) {
+		            $(this).parent("li.pagelink").addClass("active");
+		        }
+		    });
+
+		    // highlight current page in site navigation menu
+		    $('a.pagelink').each(function () {
+		        var thislink = this.href;
+
+		        if (thispage.split("#")[0] == thislink.split("#")[0]) {
+		            $(this).parent("li.pagelink").addClass("active");
+
+		            // find url for current page
+		            pageobject = $(this)[0];
+
+
+		            // find url for prev button
+		            pageobjectPrev = $(this).parent("li.pagelink").prev();
+
+					if(pageobjectPrev.length == 0) {
+						pageobjectPrev = $(this).parent("li.pagelink");
+						pageobjectPrev = pageobjectPrev.parent("ul.pagelink").prev();
+					}
+
+			        while(pageobjectPrev.is("ul.pagelink")){
+						pageobjectPrev = pageobjectPrev.children().last();
+			        }
+
+			        if(pageobjectPrev.is("li.pagelink")){
+						pageobjectPrev = pageobjectPrev.children();
+			        }
+
+			        if(pageobjectPrev.is("a.pagelink")){
+						pageobjectPrev = pageobjectPrev[0];
+			        }
+
+
+		            // find url for next button
+		            pageobjectNext = $(this).parent("li.pagelink").next().children().first();
+
+			        if(pageobjectNext.length == 0){
+			        	var parentul = $(this).parent("li.pagelink").parent("ul.pagelink");
+
+			        	while(parentul.length > 0) {
+			            	pageobjectNext = parentul.next().children();
+
+			            	if(pageobjectNext.length > 0)
+			            		break;
+			            	parentul = parentul.parent("ul.pagelink");
+			        	}
+			        }
+
+			        if(pageobjectNext.is("li.pagelink")) {
+						pageobjectNext = pageobjectNext.children();
+			        }
+
+			        if(pageobjectNext.is("a.pagelink")) {
+						pageobjectNext = pageobjectNext[0];
+			        }
+		        }
+		    });
+
+		    // enable navigation buttons
+		    if(pageobjectPrev.href){
+				$('a.btn-site-prev').each(function () {
+					$(this)[0].href = pageobjectPrev.href;
+					$(this).removeClass('disabled');
+			    });
+			}
+
+			$('a.btn-site-up').each(function () {
+			    if(pageobject.href.split("#")[0] != $(this)[0].href.split("#")[0]){
+					$(this).removeClass('disabled');
+			    }
+		    });
+
+		    if(pageobjectNext.href){
+				$('a.btn-site-next').each(function () {
+					$(this)[0].href = pageobjectNext.href;
+					$(this).removeClass('disabled');
+			    });
+	        }
+
+		    // highlight current anchor link in the current page navigation, on page load
+		    $('.pagenav a').each(function () {
+		        var thislink = this.href;
+
+		        if (thispage == thislink) {
+		            $(this).parent("li").addClass("active");
+		        }
+		    });
+
+			$(document).ready(function ($) {
+			    // highlight current anchor link when clicked upon in pagenav menu
+				$('.pagenav a').on('click', function() {
+					$('.pagenav li').removeClass('active');
+			        $(this).parent("li").addClass("active");
+				});
+
+			    // highlight current anchor link when clicked on anchor in content
+				$('a.anchor').on('click', function() {
+					var anchorlink = this.href;
+					$('.pagenav li').removeClass('active');
+				    $('.pagenav a').each(function () {
+				        var thislink = this.href;
+				        if (anchorlink == thislink) {
+				            $(this).parent("li").addClass("active");
+				        }
+				    });
+				});
+			});
+		</script>
+
+		<div class="container container-override" id="content-zzz">
+			<div class="box content-override">
+				{{ block "main" . }}This is the main content.{{ end }}
+			</div>
+			{{ partial "footer.html" . }}
+		</div>
+
+		</div>
+
 		<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
 		<script src="{{ "bootstrap.min.js" | relURL }}"></script>
 	</body>

@@ -1,0 +1,31 @@
+
+
+<!-- make content-header-2part -->
+<!-- make content-header-3part -->
+
+<!-- make content-footer-2part -->
+<!-- make content-footer-3part -->
+
+<!-- make definition blocks to select center section -->
+
+<!-- make css classes -->
+
+<!-- https://stackoverflow.com/questions/18781713/css-divide-width-100-to-3-column -->
+<!-- https://stackoverflow.com/questions/4767971/how-do-i-center-float-elements/4767993#4767993 -->
+
+</br>
+{{ if .GitInfo }}
+{{ .GitInfo }}
+{{ else }}
+Page not added in Git yet
+{{ end }}
+</br>
+
+
+<div class="footer" style="display: inline-block; width: 100%;">
+<hr class="footer-hr" style="margin-top: 5px; margin-bottom: 5px"></hr>
+<div class="footer2-left" style="vertical-align: top; display: inline-block; width: 33.333333%; text-align: left;"><i>Last updated {{ .Date.Format "15:04:05 MST, 02 Jan 2006." }}</i></div><div class="footer2-right" style="vertical-align: top; display: inline-block; width: 33.333333%; text-align: center;">center</div><div class="footer2-center" style="vertical-align: top; display: inline-block; width: 33.333333%; text-align: right">right</div>
+</div>
+<div style="margin-bottom: 20px;"></div>
+
+
