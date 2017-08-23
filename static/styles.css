@@ -130,3 +130,512 @@ footer p { clear: left; margin-bottom: 0 }
   /*background-color:#D8C4A2;*/
 
 }
+
+
+.highlight-block,
+.highlight-inline {
+    background:yellow;
+    color:black;
+}
+
+.highlight-block span,
+.highlight-inline span {
+    background:none !important;
+    color:inherit !important;
+}
+
+.highlight-block {
+    display:inline-block;
+    width:100%;
+}
+
+
+.literalblock pre, .literalblock pre[class], .listingblock pre, .listingblock pre[class] {
+	/*border: 1px dashed #666666;*/
+	/*-webkit-border-radius: 0;*/
+	/*border-radius: 0;*/
+	/*word-wrap: break-word;*/
+	/*padding: 1.25em 1.5625em 1.125em 1.5625em;*/
+	/*font-size: 0.8125em;*/
+
+	/*border: 0px !important;*/
+	border: initial;
+}
+
+
+a:focus,a:hover {
+  color:rgba(255,255,255,0.75);
+  background-color:transparent
+}
+
+a:focus {
+  outline:5px auto -webkit-focus-ring-color;
+  outline-offset:-2px
+}
+
+
+
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
+  color:#ffffff;
+  background-color:#062d36
+}
+
+
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a:focus {
+  color:#ffffff;
+  background-color:#062d36
+}
+
+.navbar-default .navbar-nav>.disabled>a,.navbar-default .navbar-nav>.disabled>a:hover,.navbar-default .navbar-nav>.disabled>a:focus {
+  color:rgba(255,255,255,0.25);
+  background-color:transparent;
+  /*background-color:white;*/
+}
+
+
+
+.anchor {
+  /*padding-top: 90px;*/
+  /*margin-top: -90px;*/
+}
+
+/*.anchor:target {padding-top: 90px;}*/
+
+
+
+@media (min-width: 668px) {
+  .container-override {
+    /*width: 100%;*/
+    width: inherit;
+    /*min-width: 0px;*/
+  }
+}
+@media (min-width: 992px) {
+  .container-override {
+    /*width: 100%;*/
+    width: inherit;
+    /*min-width: 0px;*/
+  }
+}
+@media (min-width: 1200px) {
+  .container-override {
+    /*width: 100%;*/
+    width: inherit;
+    /*min-width: 0px;*/
+  }
+}
+
+
+/*@media (min-width: 559px) and (max-width: 768px) {
+   .collapse {
+       display: none !important;
+   }
+}
+*/
+
+#navbuttons-zzz {
+	z-index: 2000;
+	/*z-index: 1030;*/
+	margin-left: 17px;
+	position: absolute;
+	display: inline-flex;
+	left: -100%;
+}
+
+
+@media screen and (max-width: 1068px) {
+    /* dissapear just the navbar */
+	#content-zzz {
+		margin-left: 250px;
+	}
+
+	#pagenav-zzz {
+		left: -100%;
+		margin-left: 0px;
+	}
+}
+
+.navbar-nav>li>a {
+    padding-top: 0px;
+    padding-bottom: 0px;
+    vertical-align: center;
+    line-height: 50px;
+}
+
+.navbar-nav {
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+.navbar {
+	max-height: 50px;
+}
+
+.navbar-left {
+   float: left;
+   margin: 0;
+}
+
+.navbar-right {
+   float: right;
+   margin: 0;
+}
+
+
+/* fix default background color of code blocks in colony.css */
+.listingblock pre {
+	background-color:#002b36;
+	/*background-color: #073642;*/
+}
+
+
+/* going wider, normal mode */
+@media only screen and (min-width: 698px) {
+    .collapse {
+        display: block;
+    }
+    .navbar-header {
+        float: left;
+    }
+    .navbar-toggle {
+        display: none;
+    }
+    .navbar-nav.navbar-left {
+       float: left;
+       margin: 0;
+    }
+    .navbar-nav.navbar-right {
+       float: right;
+       margin: 0;
+    }
+    .navbar-nav>li {
+        float: left;
+        /*width: 200px;*/
+    }
+    .navbar-nav>li>a {
+        /*padding-top: 15px;*/
+        /*padding-bottom: 15px;*/
+    }
+}
+/* going narrower, when menu appears */
+@media only screen and (max-width: 698px) {
+	#navbuttons-zzz {
+		/*left: 0%;*/
+		left: -0px;
+		/*float: left;*/
+		/*position: absolute !important;*/
+	}
+
+    li {
+    	white-space: nowrap !important;
+    	/*display: inline-block !important;*/
+    }
+
+
+    /* dissapear both sidebar and navbar */
+	#content-zzz {
+		margin-left: 0px;
+	}
+
+	#pagenav-zzz {
+		left: -100%;
+		margin-left: 0px;
+	}
+
+	#sidebar-zzz {
+		left: -100%;
+		margin-left: 0px;
+	}
+
+
+    .navbar-collapse.collapse {
+        display: none !important;        
+    }
+    /* ! affects both trigger points */
+    .navbar-collapse.collapse.in {
+        /*display: block !important;*/
+        /*width: 160px;*/
+        /*height: 600px !important;*/
+
+        display: inline-flex !important;
+        /*display: block !important;        */
+        /*display: inline-block !important;        */
+        width: 260px;
+        top: 50px;
+        /*padding-top: 50px;*/
+        /*display: inline-table !important;*/
+        /*display: inline !important;*/
+        /*display: initial !important;*/
+        /*display: grid !important;*/
+        /*overflow: initial;*/
+        right: 0px;
+
+    }
+
+    /* this bit is for the menu icon */
+    .navbar-header .collapse, .navbar-toggle {
+        display: block !important;
+        /*width: 280px;*/
+        /*display: inline-flex !important;*/
+    }
+
+    /* menu reveal / menu animation */
+    .collapsing {
+        top: 50px;
+        right: 0px !important;
+
+		/* to disable the menu animation */
+	    /*-webkit-transition: none;*/
+	    /*transition: none;*/
+	    /*display: none;*/
+	}
+
+    .navbar-header {
+	    /* this fixes the width of the menu animation */
+	    /* for some reason it must be 80px wider than the fully extended menu */
+        width: 340px;
+        /*float: none;*/
+        /*float: left;*/
+    }
+
+	#sidebar-zzz {
+		/*position: relative;*/
+		/*position: fixed;*/
+		/*-webkit-transition: left .5s ease-out;*/
+		/*transition: left .5s ease-out;*/
+		/*z-index: 2000;*/
+		/*top: 0;*/
+		/*width: 280px;*/
+		/* works all the way down to an iphone 4 */
+		/*height: 100%;*/
+		/*background: white;*/
+		/*overflow-y: auto;*/
+	}
+
+     .collapse {
+        /*display: none;*/
+
+        /*display: flex;*/
+        /*display: block;*/
+
+        /*float: right;*/
+     }
+     .navbar {
+        /*width: 250px;*/
+        /*left: calc(100%-250px);*/
+        /*padding-right: 0px;*/
+        /*right: 0px;*/
+        /*float: right;*/
+        /*float: none;*/
+        /*position: fixed;*/
+        /*display: inline;*/
+        /*display: block;*/
+        /*display: flex;*/
+        /*display: grid;*/
+     }
+     .navbar-default {
+     	/*height: 99999px;*/
+        /*width: 650px;*/
+        /*margin-left: calc(100%-250px);*/
+        /*right: 0px;*/
+        /*float: right;*/
+     }
+     .navbar-fixed-top {
+        /*width: 240px;*/
+        /*width: 250px;*/
+        /*width: 250px;*/
+        display: flex;
+        /*left: calc(100%+200px);*/
+        position: relative;
+        /*left: 70%;*/
+        /*margin-right: 17px;*/
+        /*margin-top: 0px;*/
+        /*position-top: 0px;*/
+        float: right;
+        /*float: left;*/
+        /*right: 0px;*/
+        /*background-color: transparent;*/
+		background-color:#002b36;
+
+        /*background-color: #373642;*/
+		/*color:#839496;*/
+
+     }
+
+
+     /* ! this section is not corresponding to the 
+          appearance of the menu icon */
+     .navbar-collapse {
+        /*background-color: initial;*/
+        background-color: #073642;
+		/*background-color:#002b36;*/
+		position: absolute;
+		/*position: relative;*/
+		/*max-width: 460px;*/
+		/*max-height: 9999px;*/
+		/*width: 400px;*/
+		right: 80px;
+		/*left: 0px;*/
+		display: inline-block;
+        /*display: block;*/
+        /*display: flex;*/
+
+     }
+
+     .navbar-header {
+        /*display: block;*/
+        /*display: flex;*/
+     }
+}
+
+
+
+
+
+.site-header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  /*min-height: 50px;*/
+  height: 50px;
+
+
+	background-color:#002b36;
+	/*background-color: #073642;*/
+
+  /*background-color: white;*/
+  /*color: #424242;*/
+  /*box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.37);*/
+}
+
+/*.site-header .project-status {
+font-size: 14px;
+line-height: 50px; }
+
+*/
+/*  .site-header .header-contents {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+*/
+
+
+
+
+
+
+
+.content-override {
+
+	/*float: left;*/
+	/*display: inline-block;*/
+	/*display: block;*/
+
+	/*margin-top: 50px;*/
+	/*padding-top: 50px;*/
+	/*border-top: 50px;*/
+	/*border-top-width: 50px;*/
+
+	/*overflow: scroll;*/
+}
+
+.scrollable {
+	/*position: fixed;*/
+	/*top: 50px;*/
+	/*margin-top: 200px;*/
+	/*border-top: 200px;*/
+}
+
+.contents {
+  padding: 50px 0px 0px 0px;
+}
+
+.navbar-override {
+	/*position: fixed;*/
+	/*position: initial;*/
+	/*position: inherit;*/
+	position: none;
+
+	/*margin-left: 500px;*/
+	/*margin-left: 250px;*/
+	/*margin-left: 0px;*/
+	/*margin-left: 200px;*/
+	padding-left: 0px;
+
+	margin-bottom: 0px;
+	/*min-height: 50px;*/
+}
+.container-override {
+	/*position: fixed;*/
+	/*overflow-y: scroll;*/
+	/*overflow-y: auto;*/
+
+	/*margin-left: 450px;*/
+	margin-left: 500px;
+
+	/*left: 0px;*/
+	/*right: 0px;*/
+
+	padding-left: 30px;
+	padding-right: 30px;
+
+	/* subtract the height of the navbar */
+	/* source: https://stackoverflow.com/questions/17401972/bootstrap-100-height-with-navbar */
+	height: calc(100% - 50px);
+}
+
+.sidebar {
+  position: fixed;
+  /*width: 200px;*/
+  width: 250px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  /*height: 100%;*/
+  /* subtract the height of the navbar */
+  height: calc(100% - 50px);
+
+  /*overflow-y: scroll*/
+  overflow-y: auto;
+
+}
+
+.pagenav {
+  position: fixed;
+
+  /*margin-left: 200px;*/
+  margin-left: 250px;
+  width: 250px;
+
+  padding-left: 15px;
+  padding-right: 15px;
+
+  /* subtract the height of the navbar */
+  height: calc(100% - 50px);
+
+  overflow-y: auto;
+}
+
+/*.silentscroll:hover {
+	overflow-y: scroll;
+	overflow-y: hidden;
+}
+*/
+
+
+/*.silentscroll {
+	width: 267px;
+	height: 95%;
+	overflow-y: scroll;
+	padding-right: 17px;
+}
+*/
+.silentscroll::-webkit-scrollbar { 
+  display: none;  // Safari and Chrome
+  /*width: 0px;*/
+}
+
+
+
