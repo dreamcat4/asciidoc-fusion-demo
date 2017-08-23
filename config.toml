@@ -1,12 +1,15 @@
 baseURL = "http://hugotest.bep.is"
-languageCode = "en-us"
 title = "Hugo Test Site"
 paginate = 2
-pygmentscodefences = "true"
-pygmentscodefencesguesssyntax = false
-pygmentsstyle = "trac"
-pygmentsuseclasses = false
+
 disableHugoGeneratorInject = true
+# hugo pygments support works only for native formats like markdown, not asciidoctor
+# pygmentscodefences = "true"
+# enables syntax guessing for code fences without specified language
+# pygmentscodefencesguesssyntax = true
+# # color-codes for highlighting derived from this style
+# pygmentsstyle = "friendly"
+# pygmentsstyle = "monokai"
 [params]
 	git_host = "https://github.com"
 	# git_host = "https://gitlab.com"
