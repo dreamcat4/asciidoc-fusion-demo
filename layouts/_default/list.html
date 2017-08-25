@@ -1,8 +1,4 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<div class="list-group">
-{{ range .Paginator.Pages }}
-<a href="{{ .RelPermalink }}" class="list-group-item">{{ .Title }}</a>
-{{ end }}
-</div>
+<h2><a class="anchor" href="#"></a>{{ .Title }}</h1>
+{{ .Content }}
 {{ end }}

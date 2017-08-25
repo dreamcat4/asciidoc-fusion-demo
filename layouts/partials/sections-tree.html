@@ -3,7 +3,7 @@
 
 
 <div class="css-treeview" style="padding-bottom: 10px;">
-	<!-- <li class="pagelink"><a href="{{ $home.Permalink }}#top">Home</a> -->
+	<!-- <li class="pagelink"><a href="{{ $home.Permalink }}#">Home</a> -->
 	{{ template "section-tree-nav" $home }}
 </div>
 
@@ -12,7 +12,7 @@
 
 	<li class="pagelink">
 	<!-- S  -->
-	<a class="pagelink" href="{{ .RelPermalink}}#top">{{ .Title }}</a>
+	<a class="pagelink" href="{{ .RelPermalink}}#">{{ .Title }}</a>
 	</li>
 
 	<!-- if home page -->
@@ -34,7 +34,7 @@
 	{{ range $children }}
 		<li class="pagelink">
 			<!-- P -->
-			<a class="pagelink" href="{{ .RelPermalink}}#top">{{ .Title }}</a>
+			<a class="pagelink" href="{{ .RelPermalink}}#">{{ .Title }}</a>
 		</li>
 	{{ end }}
 
