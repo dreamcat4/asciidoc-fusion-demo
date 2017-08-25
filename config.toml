@@ -6,6 +6,8 @@ paginate = 2
 enableGitInfo = true
 
 disableHugoGeneratorInject = true
+# the folder to publish the website to
+publishDir = "docs"
 # hugo pygments support works only for native formats like markdown, not asciidoctor
 # pygmentscodefences = "true"
 # enables syntax guessing for code fences without specified language
