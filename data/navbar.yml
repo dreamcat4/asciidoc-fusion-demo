@@ -1,0 +1,7 @@
+
+# put here your list of page titles, to populate the horizontal links across bootstrap's top navbar
+navbar:
+  - home
+
+  
+

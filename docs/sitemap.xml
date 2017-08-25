@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://hugotest.bep.is/section2/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section2/a/b/c/d/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/s_1_2a/a/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/s_1_2a/b/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/s_1_2a/c/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/s_1_2b/a/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/s_1_2b/b/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/s_1_2b/c/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section2/a/b/c/d/hugo-rocks/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/hugo-rocks/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/</loc>
+    <lastmod>2017-06-07T15:58:16+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/s_1_2a/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/s1_1/s_1_2b/</loc>
+    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section2/a/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section2/a/b/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section2/a/b/c/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/section1/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://hugotest.bep.is/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
