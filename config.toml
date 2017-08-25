@@ -1,4 +1,4 @@
-baseURL = "http://hugotest.bep.is"
+baseURL = "https://dreamcat4.github.io/hugotest/"
 title = "Hugo Test Site"
 paginate = 2
 #  allows us to access Git revision information in theme files like author name, email, hash, and date
