@@ -83,13 +83,26 @@
   </url>
   
   <url>
+    <loc>https://dreamcat4.github.io/hugotest/section2/a/b/c/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://dreamcat4.github.io/hugotest/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section2/a/b/c/</loc>
+    <loc>https://dreamcat4.github.io/hugotest/markdown/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/markdown/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dreamcat4.github.io/hugotest/markdown/markdown-here/markdown-cheatsheet/</loc>
   </url>
   
   <url>
@@ -100,6 +113,18 @@
   <url>
     <loc>https://dreamcat4.github.io/hugotest/tags/</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://dreamcat4.github.io/hugotest/markdown/markdown-here/tips-and-tricks/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/</loc>
+  </url>
+  
+  <url>
+    <loc>https://dreamcat4.github.io/hugotest/markdown/markdown-here/</loc>
   </url>
   
 </urlset>

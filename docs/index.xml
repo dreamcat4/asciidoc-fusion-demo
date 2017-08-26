@@ -82,5 +82,47 @@
       <description>Output Format // Format represents an output representation, usually to a file on disk. type Format struct { // The Name is used as an identifier. Internal output formats (i.e. HTML and RSS) // can be overridden by providing a new definition for those types. Name string MediaType media.Type // Must be set to a value when there are two or more conflicting mediatype for the same resource. Path string // The base output file name used when not using &amp;quot;ugly URLs&amp;quot;, defaults to &amp;quot;index&amp;quot;.</description>
     </item>
     
+    <item>
+      <title>Markdown Cheatsheet</title>
+      <link>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/markdown/</guid>
+      <description>Typography Headings Headings from h1 through h6 are constructed with a # for each level:
+# h1 Heading ## h2 Heading ### h3 Heading #### h4 Heading ##### h5 Heading ###### h6 Heading  Renders to:
+h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading HTML:
+&amp;lt;h1&amp;gt;h1 Heading&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;h2 Heading&amp;lt;/h2&amp;gt; &amp;lt;h3&amp;gt;h3 Heading&amp;lt;/h3&amp;gt; &amp;lt;h4&amp;gt;h4 Heading&amp;lt;/h4&amp;gt; &amp;lt;h5&amp;gt;h5 Heading&amp;lt;/h5&amp;gt; &amp;lt;h6&amp;gt;h6 Heading&amp;lt;/h6&amp;gt;  
+Horizontal Rules The HTML &amp;lt;hr&amp;gt; element is for creating a &amp;ldquo;thematic break&amp;rdquo; between paragraph-level elements.</description>
+    </item>
+    
+    <item>
+      <title>Markdown-Cheatsheet</title>
+      <link>https://dreamcat4.github.io/hugotest/markdown/markdown-here/markdown-cheatsheet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dreamcat4.github.io/hugotest/markdown/markdown-here/markdown-cheatsheet/</guid>
+      <description>This is intended as a quick reference and showcase. For more complete info, see John Gruber&amp;rsquo;s original spec and the Github-flavored Markdown info page.
+Note that there is also a Cheatsheet specific to Markdown Here if that&amp;rsquo;s what you&amp;rsquo;re looking for. You can also check out more Markdown tools.
+Headers # H1 ## H2 ### H3 #### H4 ##### H5 ###### H6 Alternatively, for H1 and H2, an underline-ish style: Alt-H1 ====== Alt-H2 ------  H1 H2 H3 H4 H5 H6 Alternatively, for H1 and H2, an underline-ish style:</description>
+    </item>
+    
+    <item>
+      <title>Tips-and-Tricks</title>
+      <link>https://dreamcat4.github.io/hugotest/markdown/markdown-here/tips-and-tricks/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dreamcat4.github.io/hugotest/markdown/markdown-here/tips-and-tricks/</guid>
+      <description>Please add any tips and tricks that you come up with. For now it&amp;rsquo;ll be a flat list and we&amp;rsquo;ll add structure as needed.
+Table of Contents Pasting from Clipboard (without tears)
+Using an email signature
+Footnotes
+Using other TeX math formulae renderers
+Changing the Main Font (and other overall styles)
+Getting fancy with inline HTML
+Cool CSS stuff
+Creating more complex tables
+Getting original Markdown from sent email</description>
+    </item>
+    
   </channel>
 </rss>

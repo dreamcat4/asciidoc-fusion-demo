@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>jonschlinkert on Hugo Test Site</title>
+    <link>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/</link>
+    <description>Recent content in jonschlinkert on Hugo Test Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	<atom:link href="https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Markdown Cheatsheet</title>
+      <link>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/markdown/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/markdown/</guid>
+      <description>Typography Headings Headings from h1 through h6 are constructed with a # for each level:
+# h1 Heading ## h2 Heading ### h3 Heading #### h4 Heading ##### h5 Heading ###### h6 Heading  Renders to:
+h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading HTML:
+&amp;lt;h1&amp;gt;h1 Heading&amp;lt;/h1&amp;gt; &amp;lt;h2&amp;gt;h2 Heading&amp;lt;/h2&amp;gt; &amp;lt;h3&amp;gt;h3 Heading&amp;lt;/h3&amp;gt; &amp;lt;h4&amp;gt;h4 Heading&amp;lt;/h4&amp;gt; &amp;lt;h5&amp;gt;h5 Heading&amp;lt;/h5&amp;gt; &amp;lt;h6&amp;gt;h6 Heading&amp;lt;/h6&amp;gt;  
+Horizontal Rules The HTML &amp;lt;hr&amp;gt; element is for creating a &amp;ldquo;thematic break&amp;rdquo; between paragraph-level elements.</description>
+    </item>
+    
+  </channel>
+</rss>
