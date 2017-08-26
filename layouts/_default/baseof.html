@@ -5,18 +5,19 @@
 		<title>Hugo Test Site</title>
 		<meta name="description" content="Hugo Test Site">
 		<meta name="author" content="bep">
-		<link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+
+		<link rel="stylesheet" href="{{ "asciidoc/colony.css" | relURL }}">
+		<link rel="stylesheet" href="{{ "font-awesome/font-awesome.min.css" | relURL }}">
+
 		<link rel="stylesheet" href="{{ "bootstrap/bootstrap.min.css" | relURL }}">
 		<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
 
 		{{ if eq .Site.Params.hljs_style "light" }}
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{ .Site.Params.hljs_style_light }}.min.css">
-		<link rel="stylesheet" href="highlight/styles/light/{{ .Site.Params.hljs_style_light }}.min.css">
+		<link rel="stylesheet" href="{{ print "highlight/styles/light/" .Site.Params.hljs_style_light ".min.css" | relURL  }}">
 		{{ end }}
 
 		{{ if eq .Site.Params.hljs_style "dark" }}
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{ .Site.Params.hljs_style_dark }}.min.css">
-		<link rel="stylesheet" href="highlight/styles/dark/{{ .Site.Params.hljs_style_dark }}.min.css">
+		<link rel="stylesheet" href="{{ print "highlight/styles/dark/" .Site.Params.hljs_style_dark ".min.css" | relURL  }}">
 		{{ end }}
 
 		<script src="{{ "highlight/highlight.min.js" | relURL }}"></script>
@@ -24,7 +25,6 @@
 
 	</head>
 	<body>
-
 	<header class="site-header">
 		<div class="navbar">
 
