@@ -5,6 +5,10 @@ paginate = 2
 # this also needs to be implemented in the theme
 enableGitInfo = true
 
+# do not append 's' to the list.html pages
+pluralizelisttitles = false
+
+
 disableHugoGeneratorInject = true
 # the folder to publish the website to
 publishDir = "docs"
