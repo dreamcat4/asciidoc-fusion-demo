@@ -6,11 +6,14 @@
 		<meta name="description" content="Hugo Test Site">
 		<meta name="author" content="bep">
 
-		<link rel="stylesheet" href="{{ "asciidoc/colony.css" | relURL }}">
+		<!-- <link rel="stylesheet" href="{{ "asciidoc/colony.css" | relURL }}"> -->
+		<link rel="stylesheet" href="{{ print "asciidoc/" .Site.Params.asciidoc_theme ".css" | relURL  }}">
+
+		<!-- for asciidoc and github icons -->
 		<link rel="stylesheet" href="{{ "font-awesome/font-awesome.min.css" | relURL }}">
 
+		<!-- <link rel="stylesheet" href="{{ "bootstrap/bootstrap.css" | relURL }}"> -->
 		<link rel="stylesheet" href="{{ "bootstrap/bootstrap.min.css" | relURL }}">
-		<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
 
 		{{ if eq .Site.Params.hljs_style "light" }}
 		<link rel="stylesheet" href="{{ print "highlight/styles/light/" .Site.Params.hljs_style_light ".min.css" | relURL  }}">
@@ -23,6 +26,7 @@
 		<script src="{{ "highlight/highlight.min.js" | relURL }}"></script>
 		<script>hljs.initHighlightingOnLoad();</script>
 
+		<link rel="stylesheet" href="{{ "styles.css" | relURL }}">
 	</head>
 	<body>
 	<header class="site-header">

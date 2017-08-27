@@ -60,9 +60,10 @@ footer p { clear: left; margin-bottom: 0 }
 /* remove 9.5px white padding around pre elements from bootstrap3 */
 /* as that wraps source code blocks in blackfriday markdown */
 pre {
-  padding: 0px;
+  padding: 20px;
   border: 0px;
-  background-color:#073642;
+  /*background-color:#073642;*/
+  background-color:transparent;
   color: #999999;
   font-size: 16px;
 }
@@ -78,6 +79,36 @@ blockquote, blockquote p {
 }
 
 
+/*pre>code:not(.hljs) {*/
+pre>code {
+  font-size: initial;
+  padding: 30px;
+  display: inline-block;
+  width: 100%;
+  background: #073642;
+}
+
+/* fix colony.css */
+.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
+  background: #073642;
+}
+
+/* highlight */
+.hljs {
+  padding: 30px;
+}
+
+/* clear padding around highlight */
+.listingblock pre[class] {
+  padding: 0px;
+}
+
+/* nohighlight */
+.listingblock pre {
+  font-size: 16px;
+  padding: 30px;
+}
+
 /* remove which background from exampleblock in colony.css */
 .exampleblock > .content {
   border: 0px;
@@ -85,10 +116,13 @@ blockquote, blockquote p {
   background-color: inherit;
 }
 
-/* remove transparent table from bootstrap3 */
+
 table {
+  /* remove transparent table from bootstrap3 */
   background: white;
-  width: 100%;
+
+  /* stop tables going off the screen */
+  table-layout:fixed;
 }
 
 th, thead {
@@ -101,10 +135,6 @@ table tr.even, table tr.alt, table tr:nth-of-type(even) {
   background: #edf2f2;
 }
 
-
-pre code {
- font-size: initial;
-}
 
 
 /* webkit adjacent element selector bugfix */
