@@ -2,7 +2,7 @@
 /* bootstrap.min.css is Based on bootswatch solar theme, bootswatch v3.3.7 */
 /* https://bootswatch.com/solar/#navbar */
 
-.body { padding-top: 50px }
+/*body { padding-top: 50px }*/
 body>.navbar { -webkit-transition: background-color .3s ease-in; transition: background-color .3s ease-in }
 @media (min-width:768px) {
 	body>.navbar-transparent { background-color: transparent }
@@ -78,17 +78,167 @@ blockquote, blockquote p {
 	/*background-color: #073642;*/
 }
 
+.sidebarblock {
+  /*background-color:#002b36;*/
+  background-color: #073642;
+}
 
+.sidebarblock>.content>.title {
+  color: #999999;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/*pre:not(.highlight)>code:not(.hljs) {*/
 /*pre>code:not(.hljs) {*/
+/*code {*/
 pre>code {
+  /* css properties for source code blocks, before highlightjs is loaded*/
   font-size: initial;
   padding: 30px;
   display: inline-block;
   width: 100%;
+  /*background: #073642;*/
+  background: #282828;
+}
+
+/* asciidoc - optional title for code blocks and other elements */
+.subheader, .admonitionblock td.content > .title, .audioblock > .title, .exampleblock > .title, .imageblock > .title, .listingblock > .title, .literalblock > .title, .stemblock > .title, .openblock > .title, .paragraph > .title, .quoteblock > .title, table.tableblock > .title, .verseblock > .title, .videoblock > .title, .dlist > .title, .olist > .title, .ulist > .title, .qlist > .title, .hdlist > .title {
+  /*line-height: 1.4;*/
+  /*color: #003b6b;*/
+  /*font-weight: 300;*/
+  /*margin-top: 0.2em;*/
+  /*margin-bottom: 0.5em;*/
+
+  /*color: #ebdbb2;*/
+  color: #bbbbbb;
+  /*color: #aaaaaa;*/
+
+  font-weight: 400;
+  margin-top: 1em;
+  font-size: 16px;
+}
+
+/* within a table, the background is light */
+.tableblock > div > .paragraph > .title {
+  color: #3e3e3e;
+}
+
+*:not(pre) > code {
+  /* css properties for ` inline monospaced text` */
+
+  /* dont permit line breaks on hyphens*/
+  white-space: nowrap;
+
+  /* padding: top, right, bottom, left */
+  /*padding: 3px 2px 1px 2px;*/
+  padding: 2px 5px 2px 5px;
+  /*padding: 5px 5px 5px 5px;*/
+
+  /* outline */
+  border: 1px solid;
+  /*border: 0px;*/
+
+  /* text and border color */
+  /*color: #eeeeee;*/
+  /*color: #dddddd;*/
+  /*color: #cccccc;*/
+  color: #bbbbbb;
+  /*color: #aaaaaa;*/
+
+  /*background: #282828;*/
+  /*background: #383838;*/
+  background: #484848;
+}
+
+.menuseq {
+  color: #bbbbbb;
+  font-weight: 400;
+}
+
+mark {
+  background-color: #979692;
+}
+
+.icon-important:before {
+  /*color: #6d6e71;*/
+  color: #bbbbbb;
+}
+
+/* lead paragraph */
+.paragraph.lead > p {
+  color: #bfbfbf;
+}
+
+/* admonition icons colors */
+.admonitionblock td.icon .icon-note:before {
+  color: #bfbfbf;
+}
+.admonitionblock td.icon .icon-tip:before {
+  color: #bfbfbf;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+.admonitionblock td.icon .icon-warning:before {
+  color: #bfbfbf;
+}
+.admonitionblock td.icon .icon-caution:before {
+  color: #bfbfbf;
+}
+.admonitionblock td.icon .icon-important:before {
+  color: #bfbfbf;
+}
+
+
+.exampleblock .content table {
   background: #073642;
+  /*border: transparent;*/
+  border: solid 1px #999999;
+}
+
+.quoteblock .quoteblock {
+  border-left: 3px solid #999999;
+}
+
+.quoteblock blockquote:before {
+  color: #bbbbbb;
+}
+
+.quoteblock blockquote, .quoteblock blockquote p {
+  color: #bbbbbb;
+}
+
+.quoteblock .attribution cite {
+  color: #999999;  
+}
+
+.admonitionblock> table td.content {
+  color: #bbbbbb;
+}
+
+/* bulletpoint style */
+ul {
+  list-style-type: disc;
+}
+
+td.content {
+  /* asciidoc annotations / notes */
+  font-size: 16px;
+}
+
+pre.highlight {
+  /*background-color:#002b36;*/
+  /*background: #073642;*/
+}
+
+.listingblock pre[class="highlight"]
+{
+  /*background-color:transparent;*/
 }
 
 /* fix colony.css */
+/*.literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {*/
 .literalblock pre, .listingblock pre:not(.highlight), .listingblock pre[class="highlight"], .listingblock pre[class^="highlight "], .listingblock pre.CodeRay, .listingblock pre.prettyprint {
   background: #073642;
 }
@@ -119,10 +269,15 @@ pre>code {
 
 table {
   /* remove transparent table from bootstrap3 */
-  background: white;
+  /*background: white;*/
+  background: #cccccc;
 
   /* stop tables going off the screen */
   table-layout:fixed;
+}
+
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+  background: #edf2f2;
 }
 
 th, thead {
@@ -131,9 +286,6 @@ th, thead {
   background: -webkit-linear-gradient(top, #add386, #90b66a);
 }
 
-table tr.even, table tr.alt, table tr:nth-of-type(even) {
-  background: #edf2f2;
-}
 
 
 
