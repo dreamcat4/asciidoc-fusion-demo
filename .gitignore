@@ -14,3 +14,5 @@
 .glide/
 
 public/
+
+node_modules/

@@ -1,0 +1,31 @@
+{
+  "name": "hugotest",
+  "version": "1.0.0",
+  "description": "Test site for Hugo development and experiments, see http://hugotest.bep.is/",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dreamcat4/hugotest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dreamcat4/hugotest/issues"
+  },
+  "homepage": "https://github.com/dreamcat4/hugotest#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.7.0",
+    "gulp-extname": "^0.2.2",
+    "gulp-postcss": "^7.0.0",
+    "postcss-simple-vars": "^4.1.0",
+    "postcss-color-function": "^4.0.0",
+    "postcss-custom-media": "^6.0.0"
+  }
+}
