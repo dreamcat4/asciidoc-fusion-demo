@@ -1,0 +1,38 @@
+:page-layout: docs
+:sectanchors:
+:sectlinks:
+:page-layout: docs
+:page-javascripts: [view-result]
+
+
+// :source-highlighter: rouge
+
+:source-highlighter: highlightjs
+:source-language: sh
+
+// :source-highlighter: prism
+// prism supported languages - http://prismjs.com/#languages-list
+// :source-language: bash
+
+// :compat-mode!:
+// :experimental:
+
+// :idprefix:
+// :idprefix: foo
+// :idseparator: -
+
+
+
+:toc: macro
+// :toc-class: toc2
+:toclevels: 5
+:toc-title: nav
+// :hardbreaks:
+// toc::[]
+// :icons:
+// :hide-uri-scheme:
+:icons: font
+// :icons: icon
+
+
+
