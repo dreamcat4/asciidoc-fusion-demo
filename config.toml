@@ -50,6 +50,18 @@ googleAnalytics = "UA-12345768-1"
 # ignoreFiles: ["\\.png$", "\\.jpeg$"]
 
 [params]
+	# Wether to render the frontmatter .Title as an first <h1> in page .Content
+	section_titles = true
+	page_titles = true
+
+	author = "Dreamcat4"
+	author_url = "https://github.com/dreamcat4"
+
+
+	# For 'Edit Source' and 'File Issue' buttons
+	git_icons_with_text = false
+	# git_icons_with_text = true
+
 	git_host = "https://github.com"
 	# git_host = "https://gitlab.com"
 	git_repo = "dreamcat4/hugotest"
