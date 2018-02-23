@@ -1,0 +1,12 @@
+include::config.adoc[]
+
+== HugoTest
+
+Forked from https://github.com/bep/hugotest
+
+asciidoc-fusion
+ - "based on bootswatch solar, asciidoctor and highlightjs"
+
+A WORK IN PROGRESS
+
+
