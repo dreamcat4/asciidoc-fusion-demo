@@ -1,18 +1,25 @@
-{{ $sect := (.Site.GetPage "section" "section1") }}
-{{ $home := .Site.Home }}
-{{ if $sect }}
-<ol class = "nav navbar-nav">
-<li{{ if .InSection $home }} class="active" {{ end }}><a href = "{{ $home.RelPermalink }}">Home</a></li>
-<li{{ if .InSection $sect }} class="active" {{ end }}><a href = "{{ $sect.RelPermalink }}">{{ $sect.Title }}</a></li>
-{{ range $sect.Sections }}
-<li{{ if .InSection $ }} class="active" {{ end }}><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
-{{ template "section-nav"  (dict "sections" .Sections "current" $ ) }}
+
+<ol class="nav navbar-nav" style="display: flex !important; flex-wrap: wrap !important;">
+
+{{ range $.Site.Data.navbar.navbar }}
+
+	{{ $page_title_exact_matches := where $.Site.Pages ".Title" "eq" . }}
+	{{ range first 1 $page_title_exact_matches }}
+
+		{{ if eq .Kind "section" }}
+		<!-- S -->
+		{{ else if eq .Kind "page" }}
+		<!-- P -->
+		{{ end }}
+
+		<li class="pagelink"><a class="navlink" href = "{{ .RelPermalink }}#">{{ .Title }}</a></li>
+	{{ end }}
+
+{{ end }}
+
 </ol>
-{{ end }}
-{{ end }}
-{{ define "section-nav" }}
-{{ range .sections }}
-<li{{ if .InSection $.current }} class="active" {{ end }}><a href = "{{ .RelPermalink }}">{{ .Title }}</a></li>
-{{ template "section-nav"  (dict "sections" .Sections "current" $.current ) }}
-{{ end }}
-{{ end }}
+
+
+
+
+

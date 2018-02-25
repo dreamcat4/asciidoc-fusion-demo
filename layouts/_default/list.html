@@ -1,4 +1,73 @@
 {{ define "main" }}
+{{ if .Site.Params.section_titles }}
+{{ if .Title }}
 <h2><a class="anchor" href="#"></a>{{ .Title }}</h1>
+{{ end }}
+{{ if not .Title }}
+<h2><a class="anchor" href="#"></a>{{ .URL }}</h1>
+{{ end }}
+{{ end }}
+
+<div class="css-treeview-zzz" style="padding-bottom: 10px;">
+	{{ template "section-list" . }}
+</div>
+
 {{ .Content }}
 {{ end }}
+
+
+
+
+
+{{ define "section-list" }}
+
+	<li class="pagelink-zzz">
+	<!-- S  -->
+	<a class="pagelink-zzz" href="{{ .RelPermalink}}#">{{ .Title }}</a>
+	</li>
+
+	<!-- if home page -->
+	{{ if not .Section }}
+		{{ $.Scratch.Set "children" (where .Pages "Section" "") }}
+	{{ end }}
+
+	<!-- if a section -->
+	{{ if .Section }}
+		{{ $.Scratch.Set "children" .Pages }}
+	{{ end }}
+
+	{{ $children := $.Scratch.Get "children" }}
+
+	{{ if($children) }}
+		<ul class="pagelink-zzz">
+	{{ end }}
+
+	{{ range $children }}
+		<li class="pagelink-zzz">
+			<!-- P -->
+			<a class="pagelink-zzz" href="{{ .RelPermalink}}#">{{ .Title }}</a>
+		</li>
+	{{ end }}
+
+	{{ if($children) }}
+		</ul>
+	{{ end }}
+
+	<!-- newly added -->
+	{{ if(.Sections) }}
+		<ul class="pagelink-zzz">
+	{{ end }}
+
+	{{ range .Sections }}
+		{{ template "section-list" . }}
+	{{ end }}
+
+	<!-- newly added -->
+	{{ if(.Sections) }}
+		</ul>
+	{{ end }}
+
+{{ end }}
+
+
+

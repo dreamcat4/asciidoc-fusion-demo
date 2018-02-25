@@ -14,7 +14,7 @@
     {{ $page_url := .URL }}
 
         <ul class="pagelink">
-            <li>
+            <li class="pagelink">
             <a href="{{ $page_url }}#">
             Top
             </a>
@@ -31,13 +31,12 @@
             </li>
  -->
             {{ range $headers }}
-            <li>
-                {{ $level  := int ((index (findRE "<h[0-9][0-9]*" . 1) 0) | replaceRE "<h" "") }}
-                {{ $indent := mul 5 $level|string }}
-                {{ $anchor := (index (findRE "id=\"([^ ]*)\"" . 1) 0) | replaceRE "id=\"" "" | replaceRE "\"" "" }}
-                <!-- <a href="{{ $page_url }}#{{ $anchor }}" style="padding-left: {{ $indent }}px;"> -->
+            {{ $level  := int ((index (findRE "<h[0-9][0-9]*" . 1) 0) | replaceRE "<h" "") }}
+            {{ $indent := mul 5 $level|string }}
+            {{ $anchor := (index (findRE "id=\"([^ ]*)\"" . 1) 0) | replaceRE "id=\"" "" | replaceRE "\"" "" }}
+            <li class="pagelink">
                 <a href="#{{ $anchor }}" style="padding-left: {{ $indent }}px;">
-                <!-- {{ . | plainify | truncate 25 }} -->
+                <!-- {{ . | plainify | truncate 23 }} -->
                 {{ . | plainify }}
                 </a>
             </li>

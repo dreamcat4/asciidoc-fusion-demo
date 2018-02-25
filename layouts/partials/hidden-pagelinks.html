@@ -1,0 +1,35 @@
+
+{{ $home := .Site.Home }}
+
+
+<!-- sections and pages -->
+{{ template "section-tree-nav-h" $home }}
+
+{{ define "section-tree-nav-h" }}
+
+	<!-- S  -->
+	<a class="pagelink-h pagelink-s" href="{{ .RelPermalink}}#">{{ .Title }}</a>
+
+	<!-- if home page -->
+	{{ if not .Section }}
+		{{ $.Scratch.Set "children" (where .Pages "Section" "") }}
+	{{ end }}
+
+	<!-- if a section -->
+	{{ if .Section }}
+		{{ $.Scratch.Set "children" .Pages }}
+	{{ end }}
+
+	{{ $children := $.Scratch.Get "children" }}
+
+	{{ range $children }}
+		<!-- P -->
+		<a class="pagelink-h pagelink-p" href="{{ .RelPermalink}}#">{{ .Title }}</a>
+	{{ end }}
+
+	{{ range .Sections }}
+		{{ template "section-tree-nav-h" . }}
+	{{ end }}
+
+{{ end }}
+
