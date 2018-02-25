@@ -23,20 +23,38 @@
 /* $bgcolor0: #dcd9c6; */
 
 /* pastal pink and blue */
+$fgcolor0: #bb1924;
+$fgcolor1: #ee6c81;
+$bgcolor0: #dadcdf;
 
 
 
 /* navbar height */
+$navbar_height: 35px;
 
 /* viewport sizes */
+
+
+$small_viewport:  368px;
+$medium_viewport: 568px;
+$large_viewport:  768px;
+
+@custom-media --small-viewport  (max-width: $medium_viewport);
+@custom-media --medium-viewport (max-width: $large_viewport);
+@custom-media --large-viewport  (min-width: $large_viewport);
 
 
 /* $hide_pagenav: 1024px; */
 /* $hide_sidebar:  768px; */
 
+$hide_pagenav:  768px;
+$hide_sidebar: 1024px;
+
 /* $hide_navbar:   768px; */
 
 /* @custom-media --hide-navbar  (max-width: $hide_navbar); */
+@custom-media --hide-pagenav (max-width: $hide_pagenav);
+@custom-media --hide-sidebar (max-width: $hide_sidebar);
 
 
 
@@ -112,8 +130,8 @@ footer p { clear: left; margin-bottom: 0 }
 
 
 
-    --hide-pagenav: 768px;
-    --hide-sidebar: 1024px;
+    --hide-pagenav: $hide_pagenav;
+    --hide-sidebar: $hide_sidebar;
 
 
 
@@ -122,8 +140,8 @@ footer p { clear: left; margin-bottom: 0 }
     /* --navbar-height: 30px; */
     /* --navbar-height-negative: -30px; */
 
-    --navbar-height: 35px;
-    --navbar-height-negative: -35px;
+    --navbar-height: $navbar_height;
+    --navbar-height-negative: -$navbar_height;
 
     /* --navbar-height: 40px; */
     /* --navbar-height-negative: -40px; */
@@ -140,28 +158,28 @@ footer p { clear: left; margin-bottom: 0 }
     /* auto generated css variable mapping */
     /* uses the css color() funtion https://drafts.csswg.org/css-color/#modifying-colors */
     /* ----------------------------------- */
-    --fg-color-0: #bb1924;
-    --fg-color-1: #ee6c81;
+    --fg-color-0: $fgcolor0;
+    --fg-color-1: $fgcolor1;
 
-    --fg-color-2: rgb(207, 94, 102);
-    --fg-color-3: rgb(213, 120, 104);
+    --fg-color-2: color($fgcolor0 tint(30%));
+    --fg-color-3: color($fgcolor0 blend(#efd6ac 50%));
     /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
-    --fg-color-4: rgb(255, 92, 119);
-    --fg-color-5: rgb(119, 126, 136);
-    --fg-color-6: rgb(109, 110, 112);
-    --fg-color-7: rgb(160, 19, 42);
+    --fg-color-4: color($fgcolor1 saturation(130%));
+    --fg-color-5: color($bgcolor0 lightness(50%));
+    --fg-color-6: color($bgcolor0 shade(50%));
+    --fg-color-7: color($fgcolor1 lightness(35%));
 
-    --bg-color-0: #dadcdf;
-    --bg-color-1: rgb(224, 226, 228);
+    --bg-color-0: $bgcolor0;
+    --bg-color-1: color($bgcolor0 tint(17%));
 
-    --bg-color-2: rgb(232, 233, 235);
-    --bg-color-3: rgb(196, 198, 201);
+    --bg-color-2: color($bgcolor0 tint(37%));
+    --bg-color-3: color($bgcolor0 shade(10%));
 
-    --bg-color-4: rgb(184, 212, 255);
-    --bg-color-5: rgb(128, 165, 222);
+    --bg-color-4: color($bgcolor0 saturation(100%));
+    --bg-color-5: color($bgcolor0 whiteness(50%));
 
-    --bg-color-6: rgb(218, 220, 223);
-    --bg-color-7: rgb(201, 216, 237);
+    --bg-color-6: color($bgcolor0 blackness(13%));
+    --bg-color-7: color($bgcolor0 saturation(50%));
   }
 }
 
@@ -933,7 +951,7 @@ ul {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (--hide-pagenav) {
     /* dissapear just the pagenav */
 	#content-zzz {
 		/* margin-left: 250px; */
@@ -1029,7 +1047,7 @@ ul {
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (--hide-sidebar) {
 
   /* dissapear both sidebar and navbar */
   #content-zzz {
