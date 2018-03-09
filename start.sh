@@ -14,7 +14,7 @@ done &
 
 
 while true; do
-	hugo serve -p 1819 --baseURL localhost --cleanDestinationDir --navigateToChanged
+	hugo serve -p 8181 --baseURL localhost --cleanDestinationDir --navigateToChanged
 done
 
 # Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
