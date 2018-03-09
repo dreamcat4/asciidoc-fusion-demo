@@ -1,0 +1,52 @@
+////
+Included in:
+
+- user-manual
+////
+
+=== Side Column Placement
+// tag::column[]
+When converting to HTML, the TOC can be positioned in a column to the left or right of the main content by assigning the `left` or `right` value to the `toc` attribute.
+This positioning is achieved using CSS (so it depends on support from the stylesheet).
+The column is scrollable and fixed.
+
+.Assigning the left value to `toc`
+----
+include::toc-left.adoc[]
+----
+
+.Result: Assigning the left value to `toc`
+====
+image::toc-left.png[Table of contents using left value]
+====
+// end::column[]
+
+=== In-Document Placement
+// tag::place[]
+`toc` values of `auto` (the default), `preamble`, and `macro` place the TOC in the main document area.
+
+When the value of `toc` attribute is unspecified or `auto`, the TOC is inserted directly below the document header (document title, author and revision lines).
+
+When `toc` is set to `preamble`, the TOC is placed immediately below the preamble.
+
+CAUTION: When using the preamble placement, the TOC will not appear if your document does not have a <<Preamble,preamble>>.
+To fix this problem, just set the `toc` attribute to an empty value (or `auto`).
+
+To place the TOC anywhere else in the document, set the `toc` attribute to `macro`.
+Then, put the `toc::[]` block macro at the location in the document where you want the TOC to appear.
+The `toc::[]` macro should appear at most once in any document.
+
+If `toc` is not set to `macro`, any `toc::[]` macros will silently be ignored.
+
+.Setting toc value to macro and using the `toc::[]` macro
+----
+include::toc-macro.adoc[]
+----
+<1> The toc attribute must be set to macro in order to enable the use of the `toc::[]` macro.
+<2> In this example, the `toc::[]` macro is placed below the first section's title, indicating that this is the location where the TOC will be displayed once the document is rendered.
+
+.Result: Setting toc value to macro and using the `toc::[]` macro
+====
+image::toc-macro.png[Manual placement of the table of contents]
+====
+// end::place[]

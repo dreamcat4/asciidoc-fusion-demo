@@ -1,0 +1,13 @@
+////
+Included in:
+
+- user-manual: Macro and Block Passthroughs
+////
+
+The passthrough is the primary mechanism by which to escape content in AsciiDoc (far more comprehensive than using the backslash).
+As the name implies, a passthrough passes content directly through to the output document.
+In some forms, it's possible to apply a custom set of substitutions before the content is reintroduced.
+Otherwise, the content is excluded from all <<user-manual#subs,substitutions>>.
+
+WARNING: Using passthroughs to pass content (without substitutions) can couple your content to a specific output format, such as HTML.
+In these cases, you should use conditional preprocessor directives to route passthrough content for different output formats based on the current backend.
