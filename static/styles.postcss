@@ -1222,8 +1222,8 @@ ul {
   /* min-height: var(--navbar-height) !important; */
   /* max-height: var(--navbar-height) !important; */
   /* height: var(--navbar-height) !important; */
-  display: flex;
-  display: inline-flex;
+  /* display: flex; */
+  /* display: inline-flex; */
 }
 
 .navbar-fixed-top {
@@ -1346,10 +1346,15 @@ a>i.fa {
 
 
 
+.navbar-default {
+
+  display: flex !important;
+  justify-content: space-between !important;
+}
 
 
 .navbar-corner {
-  float: left;
+  /* float: left; */
   margin: 0;
   margin-right: 35px;
   /* width: 100px; */
@@ -1369,6 +1374,7 @@ a>i.fa {
   /* position: sticky !important; */
   /* position: static !important; */
 
+  text-align: left;
 }
 
 
@@ -1378,23 +1384,24 @@ a>i.fa {
 /* #navbar-left { */
 
   margin: 0;
-  position: absolute !important;
-  float: left !important;
+  /* position: absolute !important; */
+  /* float: left !important; */
 
 
   margin: 0;
   /* display: inline-block !important; */
   /* display: inline-flex !important; */
-  display: flex !important;
+  /* display: flex !important; */
   /* display: inline !important; */
   /* display: block !important; */
   overflow: hidden !important;
   /* width: 1400px !important; */
-  width: 1000% !important;
+  /* width: 1000% !important; */
   /* z-index: 1; */
   /* left: 170px; */
-  position: absolute !important;
+  /* position: absolute !important; */
 
+  text-align: center;
 }
 
 .navbar-left:before {
@@ -1414,9 +1421,11 @@ a>i.fa {
 .navbar-right {
   margin: 0;
   right: 0px;
-  position: absolute !important;
-  float: right !important;
+  /* position: absolute !important; */
+  /* float: right !important; */
   /* display:  block !important; */
+
+  text-align: right;
 }
 
 .nav>li>a {

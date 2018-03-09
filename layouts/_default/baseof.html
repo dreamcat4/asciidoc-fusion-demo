@@ -39,62 +39,41 @@
 		<div class="navbar">
 
 
-		<!-- <div id="navbuttons-zzz" style="padding-top: 12px; padding-left: 5px; padding-bottom: 12px;"> -->
-		<div id="navbuttons-zzz">
-			<a class="btn btn-site-prev btn-sm btn-info disabled" href="">&nbsp;<< Prev&nbsp;</a>
-			<a class="btn btn-site-up btn-sm btn-default disabled" href="{{ template "site-up-permalink" . }}#">&nbsp;&nbsp;Up ^&nbsp;&nbsp;</a>
-			<a class="btn btn-site-next btn-sm btn-primary disabled" href="">&nbsp;Next >>&nbsp;</a>
-		</div>
-
-		<div class="navbar-default navbar-fixed-top navbar-override">
+			<!-- <div id="navbuttons-zzz" style="padding-top: 12px; padding-left: 5px; padding-bottom: 12px;"> -->
+			<div id="navbuttons-zzz">
+				<a class="btn btn-site-prev btn-sm btn-info disabled" href="">&nbsp;<< Prev&nbsp;</a>
+				<a class="btn btn-site-up btn-sm btn-default disabled" href="{{ template "site-up-permalink" . }}#">&nbsp;&nbsp;Up ^&nbsp;&nbsp;</a>
+				<a class="btn btn-site-next btn-sm btn-primary disabled" href="">&nbsp;Next >>&nbsp;</a>
+			</div>
 
 
+			<div class="navbar-default navbar-fixed-top navbar-override">
 
 
+					<nav class="navbar-corner">
+						<ol class="nav navbar-nav">
+							<li class="pagelink"><a class="navlink" href="{{ .Site.Home.RelPermalink }}#">Home</a></li>
+						</ol>
+					</nav>
 
-
-				<nav class="navbar-corner">
-					<ol class="nav navbar-nav">
-						<li class="pagelink"><a class="navlink" href="{{ .Site.Home.RelPermalink }}#">Home</a></li>
-					</ol>
-				</nav>
-
-
-
-				<div class="navbar-header">
-					<!-- <a href="{{ .Site.Home.RelPermalink }}#" class="navbar-brand">Hugo Test</a> -->
-					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-					<!-- <span class="icon-bar"></span> -->
-					<!-- <span class="icon-bar"></span> -->
-					<!-- <span class="icon-bar"></span> -->
-					</button>
-				</div>
-
-				<!-- <div class="navbar-collapse collapse" id="navbar-main" style=""> -->
-				<div class="" id="navbar-main" style="">
-
-<!-- 				<ol class="nav navbar-nav">
-					<li class="pagelink"><a class="navlink" href = "{{ .Site.Home.RelPermalink }}#">Home</a></li>
-				</ol>
- -->
-				<nav class="navbar-left" id="navbar-left" style="">
-					{{ partial "sections-nav.html" . }}
-				</nav>
-						<nav class="navbar-right" id="navbar-right">
-							<ol class="nav navbar-nav" style="">
-							<li class="pagelink">
+					<nav class="navbar-left" id="navbar-left" style="">
+						{{ partial "sections-nav.html" . }}
+					</nav>
+							<nav class="navbar-right" id="navbar-right">
+								<ol class="nav navbar-nav" style="">
+								<li class="pagelink">
 
 {{ if(.Site.Params.git_icons_with_text) }}
-					        <a href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}" class="navlink">
-					            <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit Source
-					        </a>
+						        <a href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}" class="navlink">
+						            <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit Source
+						        </a>
 {{ else }}
-					        <a title="Edit Source" href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}" class="navlink"><i class="fa fa-pencil"></i></a>
+						        <a title="Edit Source" href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}" class="navlink"><i class="fa fa-pencil"></i></a>
 {{ end }}
 
 
-							</li><li class="pagelink">
-							
+								</li><li class="pagelink">
+								
 <a class="navlink" {{ if not .Site.Params.git_icons_with_text }} title="File Issue"{{ end }}
 {{ if(eq .Site.Params.git_host "https://github.com") }}
 href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?title=Page - {{ .Title }}&amp;body=From Page: {{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}"><!-- &amp;labels=dev: docs - website --><i class="fa fa-github"></i>
@@ -110,12 +89,11 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 {{ end }}
 {{ if .Site.Params.git_icons_with_text }} &nbsp;&nbsp;File Issue{{ end }}
 </a>
-							</li>
-							</ol>
-					</nav>
+								</li>
+								</ol>
+						</nav>
 
-				</div>
-		</div>
+			</div>
 		</div>
 
 
