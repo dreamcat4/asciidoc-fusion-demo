@@ -1,4 +1,11 @@
+
+
 {{ define "main" }}
+
+<!-- store the location of the current topmost section -->
+{{ $.Scratch.Set "this_page" .RelPermalink }}
+
+
 {{ if .Site.Params.section_titles }}
 {{ if .Title }}
 <h2><a class="anchor" href="#"></a>{{ .Title }}</h1>
@@ -8,23 +15,23 @@
 {{ end }}
 {{ end }}
 
+{{ .Content }}
+
 <div class="css-treeview-zzz" style="padding-bottom: 10px;">
 	{{ template "section-list" . }}
 </div>
 
-{{ .Content }}
 {{ end }}
-
-
-
-
 
 {{ define "section-list" }}
 
+	<!-- do not list the topmost section, as that is the current page -->
+	{{ if not (($.Scratch.Get "this_page") eq .RelPermalink) }}
 	<li class="pagelink-zzz">
-	<!-- S  -->
+	S
 	<a class="pagelink-zzz" href="{{ .RelPermalink}}#">{{ .Title }}</a>
 	</li>
+	{{ end }}
 
 	<!-- if home page -->
 	{{ if not .Section }}
@@ -44,7 +51,7 @@
 
 	{{ range $children }}
 		<li class="pagelink-zzz">
-			<!-- P -->
+			P
 			<a class="pagelink-zzz" href="{{ .RelPermalink}}#">{{ .Title }}</a>
 		</li>
 	{{ end }}
