@@ -24,8 +24,9 @@
     "gulp-clean-css": "^3.7.0",
     "gulp-extname": "^0.2.2",
     "gulp-postcss": "^7.0.0",
-    "postcss-simple-vars": "^4.1.0",
     "postcss-color-function": "^4.0.0",
-    "postcss-custom-media": "^6.0.0"
+    "postcss-conditionals": "^2.1.0",
+    "postcss-custom-media": "^6.0.0",
+    "postcss-simple-vars": "^4.1.0"
   }
 }

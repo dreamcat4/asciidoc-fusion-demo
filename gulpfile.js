@@ -6,13 +6,15 @@ var postcss = require('gulp-postcss');
 var simpleVars = require('postcss-simple-vars');
 var colorFunction = require("postcss-color-function");
 var customMedia = require("postcss-custom-media");
+var conditionals = require("postcss-conditionals");
 
 
 gulp.task('postcss', function () {
   var processors = [
     simpleVars(),
     colorFunction(),
-    customMedia()
+    customMedia(),
+    conditionals()
   ];
   return gulp.src('./static/**/*.postcss')
 	.pipe(extname('.css'))
