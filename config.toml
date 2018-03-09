@@ -1,7 +1,11 @@
 # baseURL = "http://127.0.0.1"
-baseURL = "https://dreamcat4.github.io/hugotest/"
+baseURL = "https://dreamcat4.github.io/asciidoc-fusion-demo/"
 
-title = "Hugo Test Site"
+# ignore content files in folders that start with an _underscore - for asciidoctor _include folders
+ignorefiles = [ "_includes/.*" ]
+
+
+title = "Asciidoc Fusion Demo"
 paginate = 2
 
 # defaultContentLanguage = "en" # this is the default
@@ -49,6 +53,11 @@ googleAnalytics = "UA-12345768-1"
 # dont watch for changes on these files
 # ignoreFiles: ["\\.png$", "\\.jpeg$"]
 
+[blackfriday]
+   plainIDAnchors = true
+   titleBlock = true
+
+
 [params]
 	# Wether to render the frontmatter .Title as an first <h1> in page .Content
 	section_titles = true
@@ -64,7 +73,7 @@ googleAnalytics = "UA-12345768-1"
 
 	git_host = "https://github.com"
 	# git_host = "https://gitlab.com"
-	git_repo = "dreamcat4/hugotest"
+	git_repo = "dreamcat4/asciidoc-fusion-demo"
 
 	# asciidoc themes from asciidoctor-stylesheet-factory
 	# asciidoc_theme = "asciidoctor"

@@ -1,8 +1,8 @@
-include::config.adoc[]
-
-== HugoTest
+== Asciidoc Fusion Demo
 
 Forked from https://github.com/bep/hugotest
+
+This is a demo site for:
 
 asciidoc-fusion
  - "based on bootswatch solar, asciidoctor and highlightjs"
