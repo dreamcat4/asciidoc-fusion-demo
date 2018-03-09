@@ -1,7 +1,11 @@
 
 # put here your list of page titles, to populate the horizontal links across bootstrap's top navbar
+# the page titles are case sensitive
 navbar:
-  - home
+  - Theme Test
+  - Asciidoc cheatsheet
+  - AsciiDoc Syntax
+  - Markdown Cheatsheet
 
   
 
