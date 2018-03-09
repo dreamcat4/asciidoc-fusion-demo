@@ -123,7 +123,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 	</header>
 
 
-					<div class="pagenav" id="pagenav-zzz with_pagenav">
+					<!-- <div class="pagenav" id="pagenav-zzz with_pagenav"> -->
 					<!-- <div class="" id=""> -->
 						<!-- pagenav -->
 	<!-- 					<div style="padding-top: 12px; padding-left: 5px; padding-bottom: 12px; border-bottom: 1px solid #dddddd;">
@@ -132,9 +132,9 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 							<a title="Next Page" class="btn btn-site-next btn-sm btn-primary disabled" href="">&nbsp;Next >>&nbsp;</a>
 						</div>
 						<p> -->
-						<h2>This page</h2>
-						    {{ partial "toc.html" . }}
-					</div>
+						<!-- <h2>This page</h2> -->
+						    <!-- {{ partial "toc.html" . }} -->
+					<!-- </div> -->
 
 		<div class="sidebar-toggle">
 				<nav class="navbar-corner" title="Toggle Site Navigation">
@@ -449,7 +449,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 								$('.panel-a').css('margin-left','-250px');
 								// $('#navbuttons-zzz').css('left','0px');
 								// $('#navbuttons-zzz').css('left','70px');
-								$('#navbuttons-zzz').css('left','60px');
+								$('#navbuttons-zzz').css('left','100px');
 								$('#navbuttons-zzz').css('top','0px');
 								// $('#navbar-left').css('display', 'none');
 								$('#navbar-left').css('visibility', 'hidden');
@@ -585,6 +585,15 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										$('.sidebar').css('transition', '0.2s');
 										$('.sidebar').css('left','-250px');
 
+										// $('#navbuttons-zzz').css('transition', '0.2s');
+										// $('#navbuttons-zzz').css('left','-250px');
+
+										$('#navbuttons-zzz').css('transition', '0.2s');
+										// $('#navbuttons-zzz').css('left','100px');
+										$('#navbuttons-zzz').css('top','00px');
+										$('.navbar-left').css('visibility','hidden');
+
+
 										// then put it back to how it was
 										// $('.sidebar').css('position','fixed');
 										// $('.sidebar').css('display','initial');
@@ -598,6 +607,10 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										$('.sidebar').css('transition', '0.2s');
 										$('.sidebar').css('left','35px');
 
+										$('#navbuttons-zzz').css('transition', '0.2s');
+										// $('#navbuttons-zzz').css('left','100px');
+										$('#navbuttons-zzz').css('top','50px');
+										$('.navbar-left').css('visibility','initial');
 
 									}
 								}
@@ -613,6 +626,12 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										// $('.panel-a').css('margin-left','-250px');
 										$('.panel-a').css({'margin-left':'-250px','transition':'0.5s'});
 
+										$('#navbuttons-zzz').css('transition', '0.5s');
+										// $('#navbuttons-zzz').css('transition', '0.2s');
+										$('#navbuttons-zzz').css('left','100px');
+										$('#navbuttons-zzz').css('top','0px');
+										$('.navbar-left').css('visibility','hidden');
+
 
 									} else {
 										console.log('panel_a is hidden');
@@ -621,7 +640,14 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 
 										// $('.panel-a').css('margin-left','0px');
 										$('.panel-a').css({'margin-left':'0px','transition':'0.5s'});
-									}								
+
+
+										$('#navbuttons-zzz').css('transition', '0.5s');
+										// $('#navbuttons-zzz').css('transition', '0.2s');
+										$('#navbuttons-zzz').css('left','65px');
+										$('#navbuttons-zzz').css('top','50px');
+										$('.navbar-left').css('visibility','initial');
+									}
 								}
 
 						        localStorage.setItem("user_set_show_sidebar", user_set_show_sidebar);
@@ -668,7 +694,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										// for animated transition
 										// $('.pagenav').css('display','block');
 										// $('.pagenav').css('position','absolute');
-										$('.pagenav').css('transition', '0.8s ease-in');
+										$('.pagenav').css('transition', '0.2s ease-in');
 										// $('.pagenav').css('left','-250px');
 										// $('.pagenav').css('transform','translateX(-103%)');
 										$('.pagenav').css('transform','translateX(-285px)');
@@ -685,7 +711,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										// $('.pagenav').css('display','block');
 										// $('.pagenav').css('position','absolute');
 										// $('.pagenav').css('position','fixed');
-										$('.pagenav').css('transition', '0.8s ease-out');
+										$('.pagenav').css('transition', '0.2s ease-out');
 										// $('.pagenav').css('left','35px');
 										// $('.pagenav').css('left','35px');
 										$('.pagenav').css('transform','translateX(285px)');

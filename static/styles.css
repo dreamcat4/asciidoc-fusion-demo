@@ -5,24 +5,84 @@
 /* all other theme colors and shades are derived from these 3 primary theme colors */
 /* ideas for color schemes --> http://blog.visme.co/color-combinations/ */
 
+
+/* specify colors are for a light or a dark theme, so we know how generate the other theme colors */
+/* if your main background color ($bgcolor0) is 'light' --> select 'light' here */
+/* if your main background color ($bgcolor0) is 'dark'  --> select 'dark'  here */
+/* $color_generation_mode: dark; */
+
+/* dark color schemes */
+/* ------------------ */
+/* dark blue theme */
+/* $fgcolor0: rgb(131, 148, 150); */
+/* $fgcolor1: rgb(42, 161, 152); */
+/* $bgcolor0: rgb(0, 43, 54); */
+
+/* light color schemes */
+/* ------------------- */
 /* ubuntu derived, purple, orange, and light brown background */
 /* $fgcolor0: #2c001e; */
 /* $fgcolor1: #d64714; */
 /* $bgcolor0: #efd6ac; */
-
-/* more color schemes */
 
 /* ubuntu derived, brighter */
 /* $fgcolor0: #2c001e; */
 /* $fgcolor1: #d64714; */
 /* $bgcolor0: #efd6bc; */
 
-/* pastal purple and green */
+/* pastal yellow and purple */
 /* $fgcolor0: #522e75; */
 /* $fgcolor1: #52591f; */
 /* $bgcolor0: #dcd9c6; */
 
-/* pastal pink and blue */
+/* pastal blue and pink */
+/* $fgcolor0: #bb1924; */
+/* $fgcolor1: #ee6c81; */
+/* $bgcolor0: #dadcdf; */
+
+
+/* individual colors */
+/* ----------------- */
+
+/* background color 0 */
+
+/* camo */
+/* light green */
+/* $bgcolor0: #dcd9c6; */
+/* light blue */
+/* $bgcolor0: #dadcdf; */
+
+/* foreground color 0 */
+
+/* orange */
+/* $fgcolor0: #d64714; */
+/* green */
+/* $fgcolor0: #52591f; */
+/* purple */
+/* $fgcolor0: #2c001e; */
+/* indigo */
+/* $fgcolor0: #522e75; */
+/* rose */
+/* pink */
+/* $fgcolor0: #ee6c81; */
+
+/* foreground color 1 */
+
+/* orange */
+/* green */
+/* $fgcolor1: #52591f; */
+/* indigo */
+/* $fgcolor1: #522e75; */
+/* purple */
+/* $fgcolor1: #2c001e; */
+/* rose */
+/* $fgcolor1: #bb1924; */
+/* pink */
+/* $fgcolor1: #ee6c81; */
+
+
+
+
 
 
 
@@ -141,27 +201,37 @@ footer p { clear: left; margin-bottom: 0 }
     /* uses the css color() funtion https://drafts.csswg.org/css-color/#modifying-colors */
     /* ----------------------------------- */
     --fg-color-0: #bb1924;
-    --fg-color-1: #ee6c81;
+    --fg-color-1: #d64714;
+    --bg-color-0: #efd6bc;
 
-    --fg-color-2: rgb(207, 94, 102);
-    --fg-color-3: rgb(213, 120, 104);
-    /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
-    --fg-color-4: rgb(255, 92, 119);
-    --fg-color-5: rgb(119, 126, 136);
-    --fg-color-6: rgb(109, 110, 112);
-    --fg-color-7: rgb(160, 19, 42);
+      --fg-color-2: rgb(207, 94, 102);
+      --fg-color-3: rgb(213, 120, 104);
+      /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
+      --fg-color-4: rgb(235, 63, 0);
+      --fg-color-5: rgb(205, 130, 50);
+      --fg-color-6: rgb(120, 107, 94);
+      --fg-color-7: rgb(163, 55, 15);
 
-    --bg-color-0: #dadcdf;
-    --bg-color-1: rgb(224, 226, 228);
+      --bg-color-1: rgb(242, 221, 199);
 
-    --bg-color-2: rgb(232, 233, 235);
-    --bg-color-3: rgb(196, 198, 201);
+      --bg-color-2: rgb(245, 229, 213);
+      --bg-color-3: rgb(215, 193, 169);
 
-    --bg-color-4: rgb(184, 212, 255);
-    --bg-color-5: rgb(128, 165, 222);
+      --bg-color-4: rgb(245, 215, 184);
+      --bg-color-5: rgb(240, 185, 128);
 
-    --bg-color-6: rgb(218, 220, 223);
-    --bg-color-7: rgb(201, 216, 237);
+      --bg-color-6: rgb(222, 206, 189);
+      --bg-color-7: rgb(235, 215, 194);
+
+      /* --sidebar-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
+      /* --pagenav-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
+
+      --sidebar-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
+      --pagenav-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
+
+      --toggle-sidebar: var(--bg-color-4);
+      --toggle-pagenav: var(--bg-color-4)
+
   }
 }
 
@@ -192,12 +262,6 @@ footer p { clear: left; margin-bottom: 0 }
     --navbar-active-color: var(--bg-color-0);
     --navbar-hv-bg-color: var(--hv-bg-color);
 
-
-    /* --sidebar-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
-    /* --pagenav-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
-
-    --sidebar-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
-    --pagenav-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
 
     /* show and hide panel animation, for sidebar and pagenav */
     --panel-transition-time: 1s;
@@ -928,7 +992,7 @@ ul {
   /* display: inline-block; */
   display: block;
   /* left: -100%; */
-  left: 30px;
+  left: 65px;
   top: 50px;
 }
 
@@ -1128,7 +1192,7 @@ a>i.fa {
   /* display: inline-block !important; */
 
   /* background: var(--sidebar-color); */
-  background: var(--bg-color-4);
+  background: var(--toggle-sidebar);
   /* background: #ffff00; */
 
   height: 100%;
@@ -1142,7 +1206,7 @@ a>i.fa {
   position: fixed !important;
 
   /* background: var(--sidebar-color); */
-  background: var(--bg-color-4);
+  background: var(--toggle-pagenav);
   /* background: #00ff00 !important; */
   z-index: 750;
 
@@ -1231,7 +1295,7 @@ a>i.fa {
 .navbar-corner {
   float: left;
   margin: 0;
-  /* margin-right: 100px; */
+  margin-right: 35px;
   /* width: 100px; */
 
   /* display: inline-block !important; */
@@ -1257,7 +1321,11 @@ a>i.fa {
 .navbar-left {
 /* #navbar-left { */
 
-  /* float: left; */
+  margin: 0;
+  position: absolute !important;
+  float: left !important;
+
+
   margin: 0;
   /* display: inline-block !important; */
   /* display: inline-flex !important; */
@@ -1271,6 +1339,20 @@ a>i.fa {
   /* left: 170px; */
   position: absolute !important;
 
+}
+
+.navbar-left:before {
+  content:" ";
+  position: absolute;
+  pointer-events:none;
+  /* right: 211px !important; */
+  right: 61px !important;
+  height: var(--navbar-height);
+  width: var(--navbar-height);
+  /* border: 1px solid #000000; */
+
+  /* background-image: linear-gradient(to right, rgba(255,255,255,0), var(--navbar-color)); */
+  background-image: linear-gradient(to right, rgba(255,255,255,0), var(--bg-color));
 }
 
 .navbar-right {

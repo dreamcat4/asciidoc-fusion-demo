@@ -5,27 +5,88 @@
 /* all other theme colors and shades are derived from these 3 primary theme colors */
 /* ideas for color schemes --> http://blog.visme.co/color-combinations/ */
 
+
+/* specify colors are for a light or a dark theme, so we know how generate the other theme colors */
+/* if your main background color ($bgcolor0) is 'light' --> select 'light' here */
+/* if your main background color ($bgcolor0) is 'dark'  --> select 'dark'  here */
+$color_generation_mode: light;
+/* $color_generation_mode: dark; */
+
+/* dark color schemes */
+/* ------------------ */
+/* dark blue theme */
+/* $fgcolor0: rgb(131, 148, 150); */
+/* $fgcolor1: rgb(42, 161, 152); */
+/* $bgcolor0: rgb(0, 43, 54); */
+
+/* light color schemes */
+/* ------------------- */
 /* ubuntu derived, purple, orange, and light brown background */
 /* $fgcolor0: #2c001e; */
 /* $fgcolor1: #d64714; */
 /* $bgcolor0: #efd6ac; */
-
-/* more color schemes */
 
 /* ubuntu derived, brighter */
 /* $fgcolor0: #2c001e; */
 /* $fgcolor1: #d64714; */
 /* $bgcolor0: #efd6bc; */
 
-/* pastal purple and green */
+/* pastal yellow and purple */
 /* $fgcolor0: #522e75; */
 /* $fgcolor1: #52591f; */
 /* $bgcolor0: #dcd9c6; */
 
-/* pastal pink and blue */
+/* pastal blue and pink */
+/* $fgcolor0: #bb1924; */
+/* $fgcolor1: #ee6c81; */
+/* $bgcolor0: #dadcdf; */
+
+
+/* individual colors */
+/* ----------------- */
+
+/* background color 0 */
+
+/* camo */
+$bgcolor0: #efd6bc;
+/* light green */
+/* $bgcolor0: #dcd9c6; */
+/* light blue */
+/* $bgcolor0: #dadcdf; */
+
+/* foreground color 0 */
+
+/* orange */
+/* $fgcolor0: #d64714; */
+/* green */
+/* $fgcolor0: #52591f; */
+/* purple */
+/* $fgcolor0: #2c001e; */
+/* indigo */
+/* $fgcolor0: #522e75; */
+/* rose */
 $fgcolor0: #bb1924;
-$fgcolor1: #ee6c81;
-$bgcolor0: #dadcdf;
+/* pink */
+/* $fgcolor0: #ee6c81; */
+
+/* foreground color 1 */
+
+/* orange */
+$fgcolor1: #d64714;
+/* green */
+/* $fgcolor1: #52591f; */
+/* indigo */
+/* $fgcolor1: #522e75; */
+/* purple */
+/* $fgcolor1: #2c001e; */
+/* rose */
+/* $fgcolor1: #bb1924; */
+/* pink */
+/* $fgcolor1: #ee6c81; */
+
+
+
+
 
 
 
@@ -160,26 +221,73 @@ footer p { clear: left; margin-bottom: 0 }
     /* ----------------------------------- */
     --fg-color-0: $fgcolor0;
     --fg-color-1: $fgcolor1;
-
-    --fg-color-2: color($fgcolor0 tint(30%));
-    --fg-color-3: color($fgcolor0 blend(#efd6ac 50%));
-    /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
-    --fg-color-4: color($fgcolor1 saturation(130%));
-    --fg-color-5: color($bgcolor0 lightness(50%));
-    --fg-color-6: color($bgcolor0 shade(50%));
-    --fg-color-7: color($fgcolor1 lightness(35%));
-
     --bg-color-0: $bgcolor0;
-    --bg-color-1: color($bgcolor0 tint(17%));
 
-    --bg-color-2: color($bgcolor0 tint(37%));
-    --bg-color-3: color($bgcolor0 shade(10%));
 
-    --bg-color-4: color($bgcolor0 saturation(100%));
-    --bg-color-5: color($bgcolor0 whiteness(50%));
+    @if $color_generation_mode == light {
 
-    --bg-color-6: color($bgcolor0 blackness(13%));
-    --bg-color-7: color($bgcolor0 saturation(50%));
+      --fg-color-2: color($fgcolor0 tint(30%));
+      --fg-color-3: color($fgcolor0 blend(#efd6ac 50%));
+      /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
+      --fg-color-4: color($fgcolor1 saturation(130%));
+      --fg-color-5: color($bgcolor0 lightness(50%));
+      --fg-color-6: color($bgcolor0 shade(50%));
+      --fg-color-7: color($fgcolor1 lightness(35%));
+
+      --bg-color-1: color($bgcolor0 tint(17%));
+
+      --bg-color-2: color($bgcolor0 tint(37%));
+      --bg-color-3: color($bgcolor0 shade(10%));
+
+      --bg-color-4: color($bgcolor0 saturation(75%));
+      --bg-color-5: color($bgcolor0 whiteness(50%));
+
+      --bg-color-6: color($bgcolor0 blackness(13%));
+      --bg-color-7: color($bgcolor0 saturation(50%));
+
+      /* --sidebar-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
+      /* --pagenav-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
+
+      --sidebar-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
+      --pagenav-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
+
+      --toggle-sidebar: var(--bg-color-4);
+      --toggle-pagenav: var(--bg-color-4);
+    }
+
+    @else if $color_generation_mode == dark {
+
+      --fg-color-2: color($fgcolor0 tint(70%));
+      --fg-color-3: color($fgcolor0 blend(#efd6ac 50%));
+      /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
+      --fg-color-4: color($fgcolor1 saturation(30%));
+      --fg-color-5: color($bgcolor0 lightness(90%));
+      /* --fg-color-6: color(var(--fg-color-2) saturation(0%)); */
+      --fg-color-6: color($fgcolor1 saturation(13%));
+      --fg-color-7: color($fgcolor1 shade(35%));
+
+      --bg-color-1: color($bgcolor0 tint(5%));
+
+      --bg-color-2: color($bgcolor0 tint(10%));
+      --bg-color-3: color($bgcolor0 lightness(10%));
+
+      --bg-color-4: color($bgcolor0 saturation(50%));
+      --bg-color-5: color($bgcolor0 blackness(50%));
+
+      --bg-color-6: color($bgcolor0 whiteness(13%));
+      --bg-color-7: color($bgcolor0 saturation(10%));
+
+      --sidebar-color: $bgcolor0;
+      --pagenav-color: $bgcolor0;
+
+      /* --toggle-sidebar: var(--bg-color-0); */
+      /* --toggle-pagenav: var(--bg-color-0); */
+      --toggle-sidebar: var(--bg-color-3);
+      --toggle-pagenav: var(--bg-color-3);
+      /* --toggle-sidebar: var(--bg-color-4); */
+      /* --toggle-pagenav: var(--bg-color-4); */
+    }
+
   }
 }
 
@@ -210,12 +318,6 @@ footer p { clear: left; margin-bottom: 0 }
     --navbar-active-color: var(--bg-color-0);
     --navbar-hv-bg-color: var(--hv-bg-color);
 
-
-    /* --sidebar-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
-    /* --pagenav-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
-
-    --sidebar-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
-    --pagenav-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
 
     /* show and hide panel animation, for sidebar and pagenav */
     --panel-transition-time: 1s;
@@ -946,7 +1048,7 @@ ul {
   /* display: inline-block; */
   display: block;
   /* left: -100%; */
-  left: 30px;
+  left: 65px;
   top: 50px;
 }
 
@@ -1146,7 +1248,7 @@ a>i.fa {
   /* display: inline-block !important; */
 
   /* background: var(--sidebar-color); */
-  background: var(--bg-color-4);
+  background: var(--toggle-sidebar);
   /* background: #ffff00; */
 
   height: 100%;
@@ -1160,7 +1262,7 @@ a>i.fa {
   position: fixed !important;
 
   /* background: var(--sidebar-color); */
-  background: var(--bg-color-4);
+  background: var(--toggle-pagenav);
   /* background: #00ff00 !important; */
   z-index: 750;
 
@@ -1249,7 +1351,7 @@ a>i.fa {
 .navbar-corner {
   float: left;
   margin: 0;
-  /* margin-right: 100px; */
+  margin-right: 35px;
   /* width: 100px; */
 
   /* display: inline-block !important; */
@@ -1275,7 +1377,11 @@ a>i.fa {
 .navbar-left {
 /* #navbar-left { */
 
-  /* float: left; */
+  margin: 0;
+  position: absolute !important;
+  float: left !important;
+
+
   margin: 0;
   /* display: inline-block !important; */
   /* display: inline-flex !important; */
@@ -1289,6 +1395,20 @@ a>i.fa {
   /* left: 170px; */
   position: absolute !important;
 
+}
+
+.navbar-left:before {
+  content:" ";
+  position: absolute;
+  pointer-events:none;
+  /* right: 211px !important; */
+  right: 61px !important;
+  height: var(--navbar-height);
+  width: var(--navbar-height);
+  /* border: 1px solid #000000; */
+
+  /* background-image: linear-gradient(to right, rgba(255,255,255,0), var(--navbar-color)); */
+  background-image: linear-gradient(to right, rgba(255,255,255,0), var(--bg-color));
 }
 
 .navbar-right {
