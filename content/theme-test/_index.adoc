@@ -1,0 +1,122 @@
++++
+weight = 10
+title = "Theme Test"
++++
+include::config.adoc[]
+
+
+== Theme colors
+
+These are the theme colors. The colors `bg-color-0`, `fg-color-0` and `fg-color-1` are the 3 primary theme colors which you set. Then all of the other remaining colors are auto-generated from those 3 primary theme colors.
+
+++++
+<table class="test-grid-zzz">
+<thead>
+<tr>
+<td>Background</td>
+<td>Foreground</td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="bg-color-0">--bg-color-0</td>
+<td class="fg-color-0">--fg-color-0</td>
+</tr>
+<tr>
+<td class="bg-color-1">--bg-color-1</td>
+<td class="fg-color-1">--fg-color-1</td>
+</tr>
+<tr>
+<td class="bg-color-2">--bg-color-2</td>
+<td class="fg-color-2">--fg-color-2</td>
+</tr>
+<tr>
+<td class="bg-color-3">--bg-color-3</td>
+<td class="fg-color-3">--fg-color-3</td>
+</tr>
+<tr>
+<td class="bg-color-4">--bg-color-4</td>
+<td class="fg-color-4">--fg-color-4</td>
+</tr>
+<tr>
+<td class="bg-color-5">--bg-color-5</td>
+<td class="fg-color-5">--fg-color-5</td>
+</tr>
+<tr>
+<td class="bg-color-6">--bg-color-6</td>
+<td class="fg-color-6">--fg-color-6</td>
+</tr>
+<tr>
+<td class="bg-color-7">--bg-color-7</td>
+<td class="fg-color-7">--fg-color-7</td>
+</tr>
+</tbody>
+</table>
+++++
+
+.Previous guides
+* guide #1 https://github.com/zfsonlinux/zfs/wiki/Ubuntu-16.04-Root-on-ZFS
+* guide #2 https://help.ubuntu.com/community/encryptedZfs
+
+
+TIP: Before you begin, you may also need an (additional) temporary installation disk, which can be anything. Unless you are installing onto dual-disks. In which case one of them can be used / re-used for this purpose. At minimum an 8gb usb key. This temporary drive to install ubuntu upon and is only used during the installation process. After which time it can be disposed of.
+
+== Source Code Highlighting
+
+The syntax highlighting css theme file is specified at the top of the template file `layouts/_default/baseof.html` lines 17-28. Where it says:
+
+[source]
+----
+include::layouts/_default/baseof.html[lines=17..28,indent=0]
+----
+
+You can choose a light background color, or a dark background color. This choice is set in your `config.toml`. In `[Params]` named `hljs_style`. Just set it to `light` or `dark`. For example:
+
+[source]
+----
+include::config.toml[lines=90..107,indent=0]
+----
+
+Now for some code to look at
+
+.Included external source file
+[source]
+----
+include::content/theme-test/test.sh[lines=1..-1,indent=0]
+----
+
+.Inline source code block
+[source]
+----
+# http://prismjs.com/plugins/line-highlight/
+
+<mark class="highlight-inline">highlight code listings</mark>
+
+# *Source* block
+# Use: <mark class="highlight-inline">highlight code listings</mark>
+# (require `source-highlight` or `pygmentize`)
+ls -lsa
+
+touch "foo"
+
+for i in one two three; do
+	echo $i
+done
+
+echo $HOME
+----
+
+
+== Quotation / Quotes
+
+:includedir: content/reference/asciidoctor.org/_includes
+
+include::{includedir}/ex-quote.adoc[tags=bl]
+
+include::{includedir}/ex-quote.adoc[tags=para]
+
+include::{includedir}/ex-quote.adoc[tags=no-cite]
+
+include::{includedir}/ex-quote.adoc[tags=link-text]
+
+
