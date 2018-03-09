@@ -1,0 +1,10 @@
++++
+weight = 50
+title = "Reference"
++++
+include::config.adoc[]
+
+These pages are reference materials, for learning the asciidoc syntax.
+
+
+
