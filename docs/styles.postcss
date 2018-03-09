@@ -9,6 +9,7 @@
 /* specify colors are for a light or a dark theme, so we know how generate the other theme colors */
 /* if your main background color ($bgcolor0) is 'light' --> select 'light' here */
 /* if your main background color ($bgcolor0) is 'dark'  --> select 'dark'  here */
+$color_generation_mode: light;
 /* $color_generation_mode: dark; */
 
 /* dark color schemes */
@@ -47,6 +48,7 @@
 /* background color 0 */
 
 /* camo */
+$bgcolor0: #efd6bc;
 /* light green */
 /* $bgcolor0: #dcd9c6; */
 /* light blue */
@@ -63,12 +65,14 @@
 /* indigo */
 /* $fgcolor0: #522e75; */
 /* rose */
+$fgcolor0: #bb1924;
 /* pink */
 /* $fgcolor0: #ee6c81; */
 
 /* foreground color 1 */
 
 /* orange */
+$fgcolor1: #d64714;
 /* green */
 /* $fgcolor1: #52591f; */
 /* indigo */
@@ -87,16 +91,31 @@
 
 
 /* navbar height */
+$navbar_height: 35px;
 
 /* viewport sizes */
+
+
+$small_viewport:  368px;
+$medium_viewport: 568px;
+$large_viewport:  768px;
+
+@custom-media --small-viewport  (max-width: $medium_viewport);
+@custom-media --medium-viewport (max-width: $large_viewport);
+@custom-media --large-viewport  (min-width: $large_viewport);
 
 
 /* $hide_pagenav: 1024px; */
 /* $hide_sidebar:  768px; */
 
+$hide_pagenav:  768px;
+$hide_sidebar: 1024px;
+
 /* $hide_navbar:   768px; */
 
 /* @custom-media --hide-navbar  (max-width: $hide_navbar); */
+@custom-media --hide-pagenav (max-width: $hide_pagenav);
+@custom-media --hide-sidebar (max-width: $hide_sidebar);
 
 
 
@@ -172,8 +191,8 @@ footer p { clear: left; margin-bottom: 0 }
 
 
 
-    --hide-pagenav: 768px;
-    --hide-sidebar: 1024px;
+    --hide-pagenav: $hide_pagenav;
+    --hide-sidebar: $hide_sidebar;
 
 
 
@@ -182,8 +201,8 @@ footer p { clear: left; margin-bottom: 0 }
     /* --navbar-height: 30px; */
     /* --navbar-height-negative: -30px; */
 
-    --navbar-height: 35px;
-    --navbar-height-negative: -35px;
+    --navbar-height: $navbar_height;
+    --navbar-height-negative: -$navbar_height;
 
     /* --navbar-height: 40px; */
     /* --navbar-height-negative: -40px; */
@@ -200,28 +219,31 @@ footer p { clear: left; margin-bottom: 0 }
     /* auto generated css variable mapping */
     /* uses the css color() funtion https://drafts.csswg.org/css-color/#modifying-colors */
     /* ----------------------------------- */
-    --fg-color-0: #bb1924;
-    --fg-color-1: #d64714;
-    --bg-color-0: #efd6bc;
+    --fg-color-0: $fgcolor0;
+    --fg-color-1: $fgcolor1;
+    --bg-color-0: $bgcolor0;
 
-      --fg-color-2: rgb(207, 94, 102);
-      --fg-color-3: rgb(213, 120, 104);
+
+    @if $color_generation_mode == light {
+
+      --fg-color-2: color($fgcolor0 tint(30%));
+      --fg-color-3: color($fgcolor0 blend(#efd6ac 50%));
       /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
-      --fg-color-4: rgb(235, 63, 0);
-      --fg-color-5: rgb(205, 130, 50);
-      --fg-color-6: rgb(120, 107, 94);
-      --fg-color-7: rgb(163, 55, 15);
+      --fg-color-4: color($fgcolor1 saturation(130%));
+      --fg-color-5: color($bgcolor0 lightness(50%));
+      --fg-color-6: color($bgcolor0 shade(50%));
+      --fg-color-7: color($fgcolor1 lightness(35%));
 
-      --bg-color-1: rgb(242, 221, 199);
+      --bg-color-1: color($bgcolor0 tint(17%));
 
-      --bg-color-2: rgb(245, 229, 213);
-      --bg-color-3: rgb(215, 193, 169);
+      --bg-color-2: color($bgcolor0 tint(37%));
+      --bg-color-3: color($bgcolor0 shade(10%));
 
-      --bg-color-4: rgb(245, 215, 184);
-      --bg-color-5: rgb(240, 185, 128);
+      --bg-color-4: color($bgcolor0 saturation(75%));
+      --bg-color-5: color($bgcolor0 whiteness(50%));
 
-      --bg-color-6: rgb(222, 206, 189);
-      --bg-color-7: rgb(235, 215, 194);
+      --bg-color-6: color($bgcolor0 blackness(13%));
+      --bg-color-7: color($bgcolor0 saturation(50%));
 
       /* --sidebar-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
       /* --pagenav-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
@@ -230,7 +252,41 @@ footer p { clear: left; margin-bottom: 0 }
       --pagenav-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
 
       --toggle-sidebar: var(--bg-color-4);
-      --toggle-pagenav: var(--bg-color-4)
+      --toggle-pagenav: var(--bg-color-4);
+    }
+
+    @else if $color_generation_mode == dark {
+
+      --fg-color-2: color($fgcolor0 tint(70%));
+      --fg-color-3: color($fgcolor0 blend(#efd6ac 50%));
+      /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
+      --fg-color-4: color($fgcolor1 saturation(30%));
+      --fg-color-5: color($bgcolor0 lightness(90%));
+      /* --fg-color-6: color(var(--fg-color-2) saturation(0%)); */
+      --fg-color-6: color($fgcolor1 saturation(13%));
+      --fg-color-7: color($fgcolor1 shade(35%));
+
+      --bg-color-1: color($bgcolor0 tint(5%));
+
+      --bg-color-2: color($bgcolor0 tint(10%));
+      --bg-color-3: color($bgcolor0 lightness(10%));
+
+      --bg-color-4: color($bgcolor0 saturation(50%));
+      --bg-color-5: color($bgcolor0 blackness(50%));
+
+      --bg-color-6: color($bgcolor0 whiteness(13%));
+      --bg-color-7: color($bgcolor0 saturation(10%));
+
+      --sidebar-color: $bgcolor0;
+      --pagenav-color: $bgcolor0;
+
+      /* --toggle-sidebar: var(--bg-color-0); */
+      /* --toggle-pagenav: var(--bg-color-0); */
+      --toggle-sidebar: var(--bg-color-3);
+      --toggle-pagenav: var(--bg-color-3);
+      /* --toggle-sidebar: var(--bg-color-4); */
+      /* --toggle-pagenav: var(--bg-color-4); */
+    }
 
   }
 }
@@ -997,7 +1053,7 @@ ul {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (--hide-pagenav) {
     /* dissapear just the pagenav */
 	#content-zzz {
 		/* margin-left: 250px; */
@@ -1093,7 +1149,7 @@ ul {
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (--hide-sidebar) {
 
   /* dissapear both sidebar and navbar */
   #content-zzz {

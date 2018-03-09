@@ -1,114 +1,14 @@
 
-/* postcss simple vars */
-
-/* set the 3 primary theme colors */
-/* all other theme colors and shades are derived from these 3 primary theme colors */
-/* ideas for color schemes --> http://blog.visme.co/color-combinations/ */
-
-
-/* specify colors are for a light or a dark theme, so we know how generate the other theme colors */
-/* if your main background color ($bgcolor0) is 'light' --> select 'light' here */
-/* if your main background color ($bgcolor0) is 'dark'  --> select 'dark'  here */
-/* $color_generation_mode: dark; */
-
-/* dark color schemes */
-/* ------------------ */
-/* dark blue theme */
-/* $fgcolor0: rgb(131, 148, 150); */
-/* $fgcolor1: rgb(42, 161, 152); */
-/* $bgcolor0: rgb(0, 43, 54); */
-
-/* light color schemes */
-/* ------------------- */
-/* ubuntu derived, purple, orange, and light brown background */
-/* $fgcolor0: #2c001e; */
-/* $fgcolor1: #d64714; */
-/* $bgcolor0: #efd6ac; */
-
-/* ubuntu derived, brighter */
-/* $fgcolor0: #2c001e; */
-/* $fgcolor1: #d64714; */
-/* $bgcolor0: #efd6bc; */
-
-/* pastal yellow and purple */
-/* $fgcolor0: #522e75; */
-/* $fgcolor1: #52591f; */
-/* $bgcolor0: #dcd9c6; */
-
-/* pastal blue and pink */
-/* $fgcolor0: #bb1924; */
-/* $fgcolor1: #ee6c81; */
-/* $bgcolor0: #dadcdf; */
-
-
-/* individual colors */
-/* ----------------- */
-
-/* background color 0 */
-
-/* camo */
-/* light green */
-/* $bgcolor0: #dcd9c6; */
-/* light blue */
-/* $bgcolor0: #dadcdf; */
-
-/* foreground color 0 */
-
-/* orange */
-/* $fgcolor0: #d64714; */
-/* green */
-/* $fgcolor0: #52591f; */
-/* purple */
-/* $fgcolor0: #2c001e; */
-/* indigo */
-/* $fgcolor0: #522e75; */
-/* rose */
-/* pink */
-/* $fgcolor0: #ee6c81; */
-
-/* foreground color 1 */
-
-/* orange */
-/* green */
-/* $fgcolor1: #52591f; */
-/* indigo */
-/* $fgcolor1: #522e75; */
-/* purple */
-/* $fgcolor1: #2c001e; */
-/* rose */
-/* $fgcolor1: #bb1924; */
-/* pink */
-/* $fgcolor1: #ee6c81; */
-
-
-
-
-
-
-
-/* navbar height */
-
-/* viewport sizes */
-
-
-/* $hide_pagenav: 1024px; */
-/* $hide_sidebar:  768px; */
-
-/* $hide_navbar:   768px; */
-
-/* @custom-media --hide-navbar  (max-width: $hide_navbar); */
-
-
-
-
 
 /* bootstrap.min.css is Based on bootswatch solar theme, bootswatch v3.3.7 */
 /* boostrap feature elements examples here --> https://bootswatch.com/solar */
 
 /*body { padding-top: 50px }*/
 body>.navbar { -webkit-transition: background-color .3s ease-in; transition: background-color .3s ease-in }
-
-
+@media (min-width:768px) {
+	body>.navbar-transparent { background-color: transparent }
+	body>.navbar-transparent .navbar-nav>.open>a { background-color: transparent !important }
+}
 #home { padding-top: 0 }
 #home .navbar-brand { padding: 13.5px 15px 12.5px }
 #home .navbar-brand>img { display: inline; margin: 0 10px; height: 100% }
@@ -124,7 +24,7 @@ body>.navbar { -webkit-transition: background-color .3s ease-in; transition: bac
 #source-button { position: absolute; top: 0; right: 0; z-index: 100; font-weight: 700 }
 .nav-tabs { margin-bottom: 15px }
 .progress { margin-bottom: 10px }
-footer { margin: 0em 0 }
+footer { margin: 5em 0 }
 footer li { float: left; margin-right: 1.5em; margin-bottom: 1.5em }
 footer p { clear: left; margin-bottom: 0 }
 .splash { padding: 9em 0 2em; background-color: #141d27; background-image: url(../img/bg.jpg); background-size: cover; background-attachment: fixed; color: #fff; text-align: center }
@@ -159,79 +59,35 @@ footer p { clear: left; margin-bottom: 0 }
 
 
 @supports not (--css: variables) {
-  /* put here an error message on the screen */
-  /* this theme does not function in older web browsers */
+  /* put here fixed color codes */
 }
 
 @supports (--css: variables) {
   :root {
-    /* --navbar-collapse-width: 398px; */
-    /* --navbar-collapse-width: 568px; */
-    /* --navbar-collapse-width: #`$`###hide_navbar; */
-
-
-
-
-    --hide-pagenav: 768px;
-    --hide-sidebar: 1024px;
-
-
-
-
-
-    /* --navbar-height: 30px; */
-    /* --navbar-height-negative: -30px; */
-
-    --navbar-height: 35px;
-    --navbar-height-negative: -35px;
-
-    /* --navbar-height: 40px; */
-    /* --navbar-height-negative: -40px; */
-
-    /* --navbar-height: 45px; */
-    /* --navbar-height-negative: -45px; */
-
-    /* --navbar-height: 50px; */
-    /* --navbar-height-negative: -50px; */
-
-
-    /* --navbar-height-negative: calc(0 - var(--navbar-height)); */
-
     /* auto generated css variable mapping */
-    /* uses the css color() funtion https://drafts.csswg.org/css-color/#modifying-colors */
     /* ----------------------------------- */
-    --fg-color-0: #bb1924;
-    --fg-color-1: #d64714;
-    --bg-color-0: #efd6bc;
+    --fg-color-0: #2c001e; /* ubuntu purple */
+    --fg-color-1: #d64714; /* ubuntu orange */
 
-      --fg-color-2: rgb(207, 94, 102);
-      --fg-color-3: rgb(213, 120, 104);
-      /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
-      --fg-color-4: rgb(235, 63, 0);
-      --fg-color-5: rgb(205, 130, 50);
-      --fg-color-6: rgb(120, 107, 94);
-      --fg-color-7: rgb(163, 55, 15);
+    --fg-color-2: color(#2c001e tint(30%));
+    --fg-color-3: color(#2c001e blend(#efd6ac 50%));
+    /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
+    --fg-color-4: color(#d64714 saturation(130%));
+    --fg-color-5: color(#efd6ac lightness(50%));
+    --fg-color-6: color(#efd6ac shade(50%));
+    --fg-color-7: color(#d64714 lightness(35%));
 
-      --bg-color-1: rgb(242, 221, 199);
+    --bg-color-0: #efd6ac;
+    --bg-color-1: color(#efd6ac tint(17%));
 
-      --bg-color-2: rgb(245, 229, 213);
-      --bg-color-3: rgb(215, 193, 169);
+    --bg-color-2: color(#efd6ac tint(37%));
+    --bg-color-3: color(#efd6ac shade(10%));
 
-      --bg-color-4: rgb(245, 215, 184);
-      --bg-color-5: rgb(240, 185, 128);
+    --bg-color-4: color(#efd6ac saturation(100%));
+    --bg-color-5: color(#efd6ac whiteness(50%));
 
-      --bg-color-6: rgb(222, 206, 189);
-      --bg-color-7: rgb(235, 215, 194);
-
-      /* --sidebar-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
-      /* --pagenav-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
-
-      --sidebar-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
-      --pagenav-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
-
-      --toggle-sidebar: var(--bg-color-4);
-      --toggle-pagenav: var(--bg-color-4)
-
+    --bg-color-6: color(#efd6ac blackness(13%));
+    --bg-color-7: color(#efd6ac saturation(50%));
   }
 }
 
@@ -261,11 +117,6 @@ footer p { clear: left; margin-bottom: 0 }
     --navbar-color: var(--bg-color-1);
     --navbar-active-color: var(--bg-color-0);
     --navbar-hv-bg-color: var(--hv-bg-color);
-
-
-    /* show and hide panel animation, for sidebar and pagenav */
-    --panel-transition-time: 1s;
-
 
     --title-color: var(--fg-color-2);
     --hr-color: var(--bg-color-3);
@@ -515,7 +366,8 @@ hr {
 
 /* top navbar */
 .navbar, .navbar-header, .navbar-default {
-  background: var(--navbar-color);
+  /* background: var(--navbar-color,var(--bg-color-alt));     */
+  background: var(--navbar-color,var(--bg-color));    
 }
 .site-header {
   background: var(--bg-color);
@@ -524,7 +376,6 @@ hr {
 
 /* non-active navbar links */
 .navbar-default .navbar-nav > li > a {
-  background: var(--navbar-color);
   /* background: var(--bg-color);  */
   color: var(--fg-color-alt);
 }
@@ -797,8 +648,7 @@ a:focus {
 }
 
 /* menu hyperlinks */
-/* .css-treeview a, .pagenav a { */
-.css-treeview a {
+.css-treeview a, .pagenav a {
 	text-decoration: none !important;
   display: block;
 }
@@ -808,16 +658,13 @@ a:focus {
   background-color: transparent;
 }
 
-.css-treeview .active>a, .pagenav .active>a {
+.css-treeview .active>a,.pagenav .active>a {
   /* color: var(--hl-font-color); */
   color: var(--active-font-color,var(--hl-font-color));
-  outline: none;
 }
-
-.css-treeview .active, .pagenav .active {
+.css-treeview .active,.pagenav .active {
   background: var(--link-hl-bg-color,var(--hl-bg-color));
 }
-
 
 
 /* menu styling */
@@ -838,13 +685,10 @@ ul.pagelink-zzz, li.pagelink-zzz {
 }
 
 /* side menu - ul list items */
-ul>li.pagelink, div.css-treeview>li.pagelink {
+ul>li.pagelink {
   /* whole width, child li background spanning, not indented like the text */
   padding: 0px 0px 0px 152px;
   margin-left: -145px;
-  margin-right: -15px;
-
-  padding-right: 15px;
 }
 
 /* top navbar - ol list items */
@@ -894,72 +738,33 @@ ul {
 
 
 
-
-
-
-#content h1 > a.anchor, h2 > a.anchor, h3 > a.anchor, #toctitle > a.anchor, .sidebarblock > .content > .title > a.anchor, h4 > a.anchor, h5 > a.anchor, h6 > a.anchor
-{
-  position: relative;
-  z-index: 500;
-
-/*   height: calc(var(--navbar-height) + 0.1em);
-  padding-top: calc(var(--navbar-height) + 0.1em);
-  margin-top: calc(var(--navbar-height-negative) - 0.1em);
- */
-
-  /* 20px margin-top is for headings h1,h2,h3 */
-/*   height: calc(var(--navbar-height) + 20px);
-  padding-top: calc(var(--navbar-height) + 20px);
-  margin-top: calc(var(--navbar-height-negative) - 20px);
- */
-
-  /* 10px margin-top is for headings h4,h5 */
-  height: calc(var(--navbar-height) + 10px);
-  padding-top: calc(var(--navbar-height) + 10px);
-  margin-top: calc(var(--navbar-height-negative) - 10px);
+.anchor {
+  /*padding-top: 90px;*/
+  /*margin-top: -90px;*/
 }
 
-#content h1:hover > a.anchor, #content h1 > a.anchor:hover, h2:hover > a.anchor, h2 > a.anchor:hover, h3:hover > a.anchor, #toctitle:hover > a.anchor, .sidebarblock > .content > .title:hover > a.anchor, h3 > a.anchor:hover, #toctitle > a.anchor:hover, .sidebarblock > .content > .title > a.anchor:hover, h4:hover > a.anchor, h4 > a.anchor:hover, h5:hover > a.anchor, h5 > a.anchor:hover, h6:hover > a.anchor, h6 > a.anchor:hover
-{
-  background: inherit !important;
-}
-
-
-
-
-.site {
-  display: flex;
-  /* min-height: calc(100vh - 50px); */
-  min-height: calc(100vh - var(--navbar-height));
-  flex-direction: column;
-}
-
-.site-content {
-  flex: 1;
-}
-
-
+/*.anchor:target {padding-top: 90px;}*/
 
 
 
 @media (min-width: 668px) {
   .container-override {
     /*width: 100%;*/
-    /* width: inherit; */
+    width: inherit;
     /*min-width: 0px;*/
   }
 }
 @media (min-width: 992px) {
   .container-override {
     /*width: 100%;*/
-    /* width: inherit; */
+    width: inherit;
     /*min-width: 0px;*/
   }
 }
 @media (min-width: 1200px) {
   .container-override {
     /*width: 100%;*/
-    /* width: inherit; */
+    width: inherit;
     /*min-width: 0px;*/
   }
 }
@@ -971,171 +776,34 @@ ul {
    }
 }
 */
+
 #navbuttons-zzz {
-	z-index: 99999 !important;
+	z-index: 2000;
 	/*z-index: 1030;*/
-  /* top: -10px; */
-  /* margin-left: 17px; */
-  /* margin-left: 70px; */
-
-  /* padding-top: 12px; */
-  padding-top: 2px;
-  /* padding-left: 5px; */
-  /* padding-bottom: 12px; */
-  /* left: 0px; */
-
-  /* position: absolute; */
-  position: fixed;
-
-  /* display: inline-flex; */
-  /* position: relative; */
-  /* display: inline-block; */
-  display: block;
-  /* left: -100%; */
-  left: 65px;
-  top: 50px;
+	margin-left: 17px;
+	position: absolute;
+	display: inline-flex;
+	left: -100%;
 }
 
 
-@media screen and (max-width: 768px) {
-    /* dissapear just the pagenav */
+@media screen and (max-width: 1068px) {
+    /* dissapear just the navbar */
 	#content-zzz {
-		/* margin-left: 250px; */
+		margin-left: 250px;
 	}
 
 	#pagenav-zzz {
-		/* left: -100%; */
+		left: -100%;
 		margin-left: 0px;
 	}
 }
-
-.hidden-checkbox {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* opacity:0; */
-  visibility: hidden;
-  margin: 0px !important;
-}
-
-.checkbox-label {
-  color: var(--link-color);
-  margin: 0px !important;
-  line-height: var(--navbar-height) !important;
-  width: 100%;
-  height: 100%;  
-  /* padding-left: 10px; */
-  /* padding-right: 10px; */
-
-
-  line-height: 1em;
-  text-align: right;
-  float: right;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-}
-
-/* .checkbox-disabled {
-  pointer-events: none;
-} */
-
-.checkbox-div {
-  margin: 0px !important;
-  line-height: var(--navbar-height) !important;
-  width: 35px;
-  /* height: 100px;   */
-
-  padding-left: 10px;
-  padding-right: 10px;
-
-  text-align: center;
-
-
-}
-
-.hidden-checkbox:checked ~ div {
-  background: var(--bg-color);
-
-  /* color: var(--link-color); */
-  color: var(--fg-color-2);
-}
-
-.hidden-checkbox:checked ~ div>i {
-  /* content: "B"; */
-}
-
-/* .checkbox-label:checked {
-   background: blue;
-}
- */
-/* .hidden-checkbox:checked {
-   background: orange;
-}
- */
-
-
-/* dissapear both sidebar and navbar */
-#content-zzz {
-  /* margin-left: 0px; */
-  /* margin-left: 500px; */
-  /* transition: margin-left 1s; */
-  transition-duration: 0.25s;
-  transition-delay: 0s;
-  transition-property: left, width, transform;
-  will-change: left, width;
-
-  left: 250px;
-}
-
-
-@media screen and (max-width: 1024px) {
-
-  /* dissapear both sidebar and navbar */
-  #content-zzz {
-    /* margin-left: 0px; */
-    /* margin-left: 500px; */
-    transition: margin-left 0.5s;
-  }
-
-  #pagenav-zzz {
-    /* left: -100%; */
-    /* margin-left: 0px; */
-  }
-
-  #sidebar-zzz {
-    /* left: -100%; */
-    /* margin-left: 0px; */
-  }
-
-  #with_sidebar {
-    left: -100%;
-    margin-left: 0px;
-  }
-
-  #with_pagenav {
-    left: -100%;
-    margin-left: 0px;
-  }
-
-  #with_pagenav_with_sidebar {
-    /* left: -100%; */
-    /* margin-left: 0px; */
-  }
-
-
-}
-
 
 .navbar-nav>li>a {
     padding-top: 0px;
     padding-bottom: 0px;
     vertical-align: center;
-    line-height: var(--navbar-height);
+    line-height: 50px;
 }
 
 .navbar-nav {
@@ -1144,289 +812,32 @@ ul {
 	margin-top: 0px;
 	margin-bottom: 0px;
 }
-
-.navbar .navbar-default, #navbar-main {
-
-  min-height: var(--navbar-height) !important;
-  max-height: var(--navbar-height) !important;
-  height: var(--navbar-height) !important;
-
-  /* parent div of navbar-left needs overflow hidden set for the child */
-  overflow: hidden !important;
-}
-
 .navbar {
-
-  min-height: var(--navbar-height) !important;
-  max-height: var(--navbar-height) !important;
-  height: var(--navbar-height) !important;
+	max-height: 50px;
 }
-
-.navbar-collapse.collapse {
-  /* min-height: var(--navbar-height) !important; */
-  /* max-height: var(--navbar-height) !important; */
-  /* height: var(--navbar-height) !important; */
-  display: flex;
-  display: inline-flex;
-}
-
-.navbar-fixed-top {
-  /* min-height: var(--navbar-height) !important; */
-  /* max-height: var(--navbar-height) !important; */
-  height: var(--navbar-height) !important;  
-}
-
-.navbar-toggle:hover, .navbar-toggle:active {
-  /* background: var(--navbar-color) !important; */
-}
-
-a>i.fa {
-  /* content: "\F0CA"; */
-  font-family: FontAwesome;
-  color: var(--link-color);
-}
-
-
-#toggle_sidebar {
-  position: fixed !important;
-  /* display: inline-block !important; */
-
-  /* background: var(--sidebar-color); */
-  background: var(--toggle-sidebar);
-  /* background: #ffff00; */
-
-  height: 100%;
-  z-index: 750;
-
-  height: 100% !important;
-}
-
-
-#toggle_pagenav {
-  position: fixed !important;
-
-  /* background: var(--sidebar-color); */
-  background: var(--toggle-pagenav);
-  /* background: #00ff00 !important; */
-  z-index: 750;
-
-  height: 100% !important;
-  /* padding-top: 35px !important; */
-
-  /* text-align: top !important; */
-  /* vertical-align: top !important; */
-  /* top: 0px !important; */
-  
-}
-
-
-
-
-.pagenav-toggle {
-
-  /* background: #00ff00 !important; */
-  height: 100%;
-
-  /* z-index: 750; */
-
-
-  /* background: var(--navbar-color) !important; */
-
-  /* display: inline-block; */
-  /* min-height: var(--navbar-height) !important; */
-  /* max-height: var(--navbar-height) !important; */
-  /* height: var(--navbar-height) !important; */
-  /* font-size: 10px !important; */
-  /* line-height: 10px !important; */
-
-  /* border: 0px; */
-  /* margin: 0px; */
-  /* padding: 0px; */
-
-  /* padding-left: 10px; */
-  /* padding-right: 10px; */
-  /* left: 135px; */
-  left: 0px; 
-  /* left: 35px; */
-
-  display: block !important;
-  /* display: block !important; */
-  /* display: inline-block !important; */
-  position: absolute !important;
-  /* position: relative !important; */
-  /* position: absolute !important; */
-  /* position: fixed !important; */
-
-  /* overflow-y: auto; */
-
-  /* padding-top: 35px; */
-
-}
-
-
-
-
-.sidebar-toggle {
-
-  display: block !important;
-  position: absolute !important;
-
-  padding-top: 35px;
-  /* width: 35px; */
-
-  /* line-height: 1em; */
-  /* text-align: right; */
-
-
-  /* bottom: 0px; */
-  /* height: calc(100% - 35px); */
-  /* height: 100%; */
-  /* z-index: 750; */
-  /* background: var(--sidebar-color); */
-
-  background: #ffff00;
-
-}
-
-
-
-
-
-.navbar-corner {
-  float: left;
-  margin: 0;
-  margin-right: 35px;
-  /* width: 100px; */
-
-  /* display: inline-block !important; */
-  /* display: inline-flex !important; */
-  /* display: inline !important; */
-  /* display: block !important; */
-  /* overflow: hidden !important; */
-  /* width: 1400px !important; */
-  /* width: 1000% !important; */
-  /* z-index: 1; */
-  /* left: 70px; */
-  /* position: absolute !important; */
-  /* position: fixed !important; */
-  /* position: relative !important; */
-  /* position: sticky !important; */
-  /* position: static !important; */
-
-}
-
-
-
 
 .navbar-left {
-/* #navbar-left { */
-
-  margin: 0;
-  position: absolute !important;
-  float: left !important;
-
-
-  margin: 0;
-  /* display: inline-block !important; */
-  /* display: inline-flex !important; */
-  display: flex !important;
-  /* display: inline !important; */
-  /* display: block !important; */
-  overflow: hidden !important;
-  /* width: 1400px !important; */
-  width: 1000% !important;
-  /* z-index: 1; */
-  /* left: 170px; */
-  position: absolute !important;
-
-}
-
-.navbar-left:before {
-  content:" ";
-  position: absolute;
-  pointer-events:none;
-  /* right: 211px !important; */
-  right: 61px !important;
-  height: var(--navbar-height);
-  width: var(--navbar-height);
-  /* border: 1px solid #000000; */
-
-  /* background-image: linear-gradient(to right, rgba(255,255,255,0), var(--navbar-color)); */
-  background-image: linear-gradient(to right, rgba(255,255,255,0), var(--bg-color));
+   float: left;
+   margin: 0;
+   display: inline-block !important;
 }
 
 .navbar-right {
-  margin: 0;
-  right: 0px;
-  position: absolute !important;
-  float: right !important;
-  /* display:  block !important; */
-}
-
-.nav>li>a {
- /* padding:10px 10px; */
- padding-left: 10px !important;
- padding-right: 10px !important;
-}
-
-.navbar-right:before {
-  content:" ";
-  position: absolute;
-  pointer-events:none;
-  /* right: 211px !important; */
-  right: 61px !important;
-  height: var(--navbar-height);
-  width: var(--navbar-height);
-  /* border: 1px solid #000000; */
-
-  /* background-image: linear-gradient(to right, rgba(255,255,255,0), var(--navbar-color)); */
-  background-image: linear-gradient(to right, rgba(255,255,255,0), var(--bg-color));
+   float: right;
+   margin: 0;
+   /* padding-bottom: 50px; */
+   /* margin-bottom: 50px; */
+   /* border-bottom: 50px; */
 }
 
 .navbar-right > ol > li {
    /* display: inline-block !important; */
    /* display: block !important; */
-   /* display: inline-flex; */
+   display: inline-flex;
 }
-
-@media (min-width:768px) {
-  body>.navbar-transparent { background-color: transparent }
-  body>.navbar-transparent .navbar-nav>.open>a { background-color: transparent !important }
-}
-
-
-
-@media (min-width: 768px) {
-  .container-override {
-    /*width: 100%;*/
-    width: inherit;
-    /*min-width: 0px;*/
-  }
-}
-@media (min-width: 992px) {
-  .container-override {
-    /*width: 100%;*/
-    width: inherit;
-    /*min-width: 0px;*/
-  }
-}
-@media (min-width: 1200px) {
-  .container-override {
-    /*width: 100%;*/
-    width: inherit;
-    /*min-width: 0px;*/
-  }
-}
-
-
-@media (min-width: 559px) and (max-width: 768px) {
-
-}
-
 
 /* going wider, normal mode */
-/* @media only screen and (--large-viewport) { */
-
+@media only screen and (min-width: 698px) {
     .collapse {
         display: block;
     }
@@ -1434,7 +845,7 @@ a>i.fa {
         float: left;
     }
     .navbar-toggle {
-        /* display: none; */
+        display: none;
     }
     .navbar-nav.navbar-left {
        float: left;
@@ -1452,7 +863,182 @@ a>i.fa {
         /*padding-top: 15px;*/
         /*padding-bottom: 15px;*/
     }
-/* } */
+}
+/* going narrower, when menu appears */
+@media only screen and (max-width: 698px) {
+	#navbuttons-zzz {
+		/*left: 0%;*/
+		left: -0px;
+		/*float: left;*/
+		/*position: absolute !important;*/
+	}
+
+  li {
+  	white-space: nowrap !important;
+  	/*display: inline-block !important;*/
+  }
+
+
+    /* dissapear both sidebar and navbar */
+	#content-zzz {
+		margin-left: 0px;
+	}
+
+	#pagenav-zzz {
+		left: -100%;
+		margin-left: 0px;
+	}
+
+	#sidebar-zzz {
+		left: -100%;
+		margin-left: 0px;
+	}
+
+
+  .navbar-collapse.collapse {
+      display: none !important;        
+  }
+
+  /* ! affects both trigger points */
+  .navbar-collapse.collapse.in {
+
+      /*display: block !important;*/
+      /*width: 160px;*/
+      /*height: 600px !important;*/
+
+      /* display: inline-flex !important; */
+      display: inline-block !important;
+      /*display: block !important;        */
+      /*display: inline-block !important;        */
+      /* width: 260px; */
+      top: 50px;
+      /* padding-bottom: 50px; */
+      /*padding-top: 50px;*/
+      /*display: inline-table !important;*/
+      /*display: inline !important;*/
+      /*display: initial !important;*/
+      /*display: grid !important;*/
+      overflow: initial;
+      right: 0px;
+  }
+
+  /* this bit is for the menu icon */
+  .navbar-header .collapse, .navbar-toggle {
+      display: block !important;
+      /*width: 280px;*/
+      /*display: inline-flex !important;*/
+  }
+
+  /* menu reveal / menu animation */
+  .collapsing {
+      top: 50px;
+      right: 0px !important;
+      /* display: inline-flex !important; */
+      display: inline-block !important;
+
+  	/* to disable the menu animation */
+    /*-webkit-transition: none;*/
+    /*transition: none;*/
+    /*display: none;*/
+	}
+
+  .navbar-header {
+    /* this fixes the width of the menu animation */
+    /* for some reason it must be 80px wider than the fully extended menu */
+      /* width: 340px; */
+      /*float: none;*/
+      /*float: left;*/
+  }
+
+	#sidebar-zzz {
+		/*position: relative;*/
+		/*position: fixed;*/
+		/*-webkit-transition: left .5s ease-out;*/
+		/*transition: left .5s ease-out;*/
+		/*z-index: 2000;*/
+		/*top: 0;*/
+		/*width: 280px;*/
+		/* works all the way down to an iphone 4 */
+		/*height: 100%;*/
+		/*background: white;*/
+		/*overflow-y: auto;*/
+	}
+
+  .collapse {
+    /*display: none;*/
+
+    /* display: flex; */
+    display: block;
+
+    float: right;
+  }
+
+  .navbar {
+    /*width: 250px;*/
+    /*left: calc(100%-250px);*/
+    /*padding-right: 0px;*/
+    /*right: 0px;*/
+    /*float: right;*/
+    /*float: none;*/
+    /*position: fixed;*/
+    /*display: inline;*/
+    /*display: block;*/
+    /*display: flex;*/
+    /*display: grid;*/
+  }
+
+  .navbar-default {
+  	/*height: 99999px;*/
+    /*width: 650px;*/
+    /*margin-left: calc(100%-250px);*/
+    /*right: 0px;*/
+    /*float: right;*/
+  }
+
+  .navbar-fixed-top {
+    /*width: 240px;*/
+    /*width: 250px;*/
+    /*width: 250px;*/
+    display: flex;
+    /*left: calc(100%+200px);*/
+    position: relative;
+    /*left: 70%;*/
+    /*margin-right: 17px;*/
+    /*margin-top: 0px;*/
+    /*position-top: 0px;*/
+    float: right;
+    /*float: left;*/
+    /*right: 0px;*/
+    /*background-color: transparent;*/
+    background-color: var(--bg-color);
+
+    /*background-color: #373642;*/
+    /*color:#839496;*/
+  }
+
+
+  /* ! this section is not corresponding to the 
+      appearance of the menu icon */
+  .navbar-collapse {
+    background-color: var(--navbar-color);
+    /*background-color:#002b36;*/
+    position: absolute;
+    /*position: relative;*/
+    /*max-width: 460px;*/
+    /*max-height: 9999px;*/
+    /*width: 400px;*/
+    right: 80px;
+    /*left: 0px;*/
+    display: inline-block;
+    /*display: block;*/
+    /*display: flex;*/
+  }
+
+  .navbar-header {
+    /*display: block;*/
+    /*display: flex;*/
+  }
+}
 
 
 .site-header {
@@ -1461,7 +1047,7 @@ a>i.fa {
   left: 0;
   z-index: 1000;
   /*min-height: 50px;*/
-  height: var(--navbar-height);
+  height: 50px;
 
 
 	/* background-color:#002b36; */
@@ -1506,7 +1092,7 @@ line-height: 50px; }
 }
 
 .contents {
-  padding: var(--navbar-height) 0px 0px 0px;
+  padding: 50px 0px 0px 0px;
 }
 
 .navbar-override {
@@ -1530,8 +1116,7 @@ line-height: 50px; }
 	/*overflow-y: auto;*/
 
 	/*margin-left: 450px;*/
-  /* margin-left: 250px; */
-  margin-left: 285px;
+	margin-left: 500px;
 
 	/*left: 0px;*/
 	/*right: 0px;*/
@@ -1541,133 +1126,40 @@ line-height: 50px; }
 
 	/* subtract the height of the navbar */
 	/* source: https://stackoverflow.com/questions/17401972/bootstrap-100-height-with-navbar */
-	height: calc(100% - var(--navbar-height));
+	height: calc(100% - 50px);
 }
 
 .sidebar {
   position: fixed;
   /*width: 200px;*/
   width: 250px;
-  /* width: 285px; */
-  margin-left: 35px;
   padding-left: 15px;
   padding-right: 15px;
 
   /*height: 100%;*/
   /* subtract the height of the navbar */
-  height: calc(100% - var(--navbar-height));
+  height: calc(100% - 50px);
 
   /*overflow-y: scroll*/
   overflow-y: auto;
-  /* top: 50px; */
 
-  /* this is needed for when 2nd pane, pagenav is hidden, and panel-b slides behind panel-a */
-  /* background: #ffff00; */
-  background: var(--sidebar-color);
-  z-index: 500;
 }
-
-
- .panel-a, .scrollable {
-  /* transition: var(--panel-transition-time); */
-  /* transition: 1s; */
-  /* transition: 1s; */
-  margin-left: 0px;
-  /* margin-left: -250px; */
- }
-
-
- .panel-b {
-  /* transition: var(--panel-transition-time); */
-  /* transition: 1s; */
-  /* transition: 0s; */
-  /* margin-left: 250px; */
-  /* margin-left: 0px; */
-  z-index: 0;
-  /* z-index: 99999; */
-
-  /* background: #ff00ff;   */
-
-  left: 285px; 
-  /* position: absolute !important; */
-  position: relative !important;
-
-  width: calc(100% - 285px);
-  /* width: 100%; */
- }
-
- .panel-c {
-  /* transition: var(--panel-transition-time); */
-  /* transition: 1s; */
-  /* transition: 0s; */
-  /* margin-left: 250px; */
-  margin-left: 0px;
-  z-index: 0;
-  /* z-index: 99999; */
-
-  /* background: #ff00ff;   */
-
-  left: 0px; 
-  /* position: absolute !important; */
-  position: relative !important;
- }
-
-
-
 
 .pagenav {
   position: fixed;
-  background: var(--pagenav-color);
 
   /*margin-left: 200px;*/
-  /* margin-left: 250px; */
+  margin-left: 250px;
   width: 250px;
-  margin-left: 35px;
 
   padding-left: 15px;
   padding-right: 15px;
 
   /* subtract the height of the navbar */
-  height: calc(100% - var(--navbar-height));
+  height: calc(100% - 50px);
 
   overflow-y: auto;
-  z-index: 500;
-
-  transform: translateX(0px);
-  will-change: transform;
-
 }
-
-/* .panel-a-visible {
-  margin-left: 0px !important;
-}
-
-.panel-a-hidden {
-  margin-left: -250px !important;
-}
-
-
-.panel-b-visible {
-  margin-left: 250px !important;
-}
-
-.panel-b-hidden {
-  margin-left: 0px !important;
-} */
-
-/* @media (--hide-pagenav) {
-  .panel-b {
-    margin-left: 0px !important;
-  }
-}
- */
-
-/* @media (--hide-sidebar) {
-  .panel-a {
-    margin-left: -250px !important;
-  }
-}
- */
 
 /*.silentscroll:hover {
 	overflow-y: scroll;

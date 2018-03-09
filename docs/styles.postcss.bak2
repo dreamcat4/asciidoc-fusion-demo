@@ -5,98 +5,52 @@
 /* all other theme colors and shades are derived from these 3 primary theme colors */
 /* ideas for color schemes --> http://blog.visme.co/color-combinations/ */
 
-
-/* specify colors are for a light or a dark theme, so we know how generate the other theme colors */
-/* if your main background color ($bgcolor0) is 'light' --> select 'light' here */
-/* if your main background color ($bgcolor0) is 'dark'  --> select 'dark'  here */
-/* $color_generation_mode: dark; */
-
-/* dark color schemes */
-/* ------------------ */
-/* dark blue theme */
-/* $fgcolor0: rgb(131, 148, 150); */
-/* $fgcolor1: rgb(42, 161, 152); */
-/* $bgcolor0: rgb(0, 43, 54); */
-
-/* light color schemes */
-/* ------------------- */
 /* ubuntu derived, purple, orange, and light brown background */
-/* $fgcolor0: #2c001e; */
-/* $fgcolor1: #d64714; */
-/* $bgcolor0: #efd6ac; */
+$fgcolor0: #2c001e;
+$fgcolor1: #d64714;
+$bgcolor0: #efd6ac;
+
+/* more color schemes */
 
 /* ubuntu derived, brighter */
 /* $fgcolor0: #2c001e; */
 /* $fgcolor1: #d64714; */
 /* $bgcolor0: #efd6bc; */
 
-/* pastal yellow and purple */
+/* pastal purple and green */
 /* $fgcolor0: #522e75; */
 /* $fgcolor1: #52591f; */
 /* $bgcolor0: #dcd9c6; */
 
-/* pastal blue and pink */
+/* pastal pink and blue */
 /* $fgcolor0: #bb1924; */
 /* $fgcolor1: #ee6c81; */
 /* $bgcolor0: #dadcdf; */
 
 
-/* individual colors */
-/* ----------------- */
-
-/* background color 0 */
-
-/* camo */
-/* light green */
-/* $bgcolor0: #dcd9c6; */
-/* light blue */
-/* $bgcolor0: #dadcdf; */
-
-/* foreground color 0 */
-
-/* orange */
-/* $fgcolor0: #d64714; */
-/* green */
-/* $fgcolor0: #52591f; */
-/* purple */
-/* $fgcolor0: #2c001e; */
-/* indigo */
-/* $fgcolor0: #522e75; */
-/* rose */
-/* pink */
-/* $fgcolor0: #ee6c81; */
-
-/* foreground color 1 */
-
-/* orange */
-/* green */
-/* $fgcolor1: #52591f; */
-/* indigo */
-/* $fgcolor1: #522e75; */
-/* purple */
-/* $fgcolor1: #2c001e; */
-/* rose */
-/* $fgcolor1: #bb1924; */
-/* pink */
-/* $fgcolor1: #ee6c81; */
-
-
-
-
-
-
 
 /* navbar height */
+$navbar_height: 35px;
 
 /* viewport sizes */
 
 
-/* $hide_pagenav: 1024px; */
-/* $hide_sidebar:  768px; */
+$small_viewport:  368px;
+$medium_viewport: 568px;
+$large_viewport:  768px;
 
-/* $hide_navbar:   768px; */
+@custom-media --small-viewport  (max-width: $medium_viewport);
+@custom-media --medium-viewport (max-width: $large_viewport);
+@custom-media --large-viewport  (min-width: $large_viewport);
 
-/* @custom-media --hide-navbar  (max-width: $hide_navbar); */
+
+$hide_pagenav: 1068px;
+$hide_sidebar:  768px;
+$hide_navbar:   768px;
+
+@custom-media --hide-navbar  (max-width: $hide_navbar);
+@custom-media --hide-pagenav (max-width: $hide_pagenav);
+@custom-media --hide-sidebar (max-width: $hide_sidebar);
 
 
 
@@ -167,23 +121,14 @@ footer p { clear: left; margin-bottom: 0 }
   :root {
     /* --navbar-collapse-width: 398px; */
     /* --navbar-collapse-width: 568px; */
-    /* --navbar-collapse-width: #`$`###hide_navbar; */
-
-
-
-
-    --hide-pagenav: 768px;
-    --hide-sidebar: 1024px;
-
-
-
+    --navbar-collapse-width: $hide_navbar;
 
 
     /* --navbar-height: 30px; */
     /* --navbar-height-negative: -30px; */
 
-    --navbar-height: 35px;
-    --navbar-height-negative: -35px;
+    --navbar-height: $navbar_height;
+    --navbar-height-negative: -$navbar_height;
 
     /* --navbar-height: 40px; */
     /* --navbar-height-negative: -40px; */
@@ -200,38 +145,28 @@ footer p { clear: left; margin-bottom: 0 }
     /* auto generated css variable mapping */
     /* uses the css color() funtion https://drafts.csswg.org/css-color/#modifying-colors */
     /* ----------------------------------- */
-    --fg-color-0: #bb1924;
-    --fg-color-1: #d64714;
-    --bg-color-0: #efd6bc;
+    --fg-color-0: $fgcolor0;
+    --fg-color-1: $fgcolor1;
 
-      --fg-color-2: rgb(207, 94, 102);
-      --fg-color-3: rgb(213, 120, 104);
-      /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
-      --fg-color-4: rgb(235, 63, 0);
-      --fg-color-5: rgb(205, 130, 50);
-      --fg-color-6: rgb(120, 107, 94);
-      --fg-color-7: rgb(163, 55, 15);
+    --fg-color-2: color($fgcolor0 tint(30%));
+    --fg-color-3: color($fgcolor0 blend(#efd6ac 50%));
+    /* --fg-color-3: color(#d64714 blend(#efd6ac 60%)); */
+    --fg-color-4: color($fgcolor1 saturation(130%));
+    --fg-color-5: color($bgcolor0 lightness(50%));
+    --fg-color-6: color($bgcolor0 shade(50%));
+    --fg-color-7: color($fgcolor1 lightness(35%));
 
-      --bg-color-1: rgb(242, 221, 199);
+    --bg-color-0: $bgcolor0;
+    --bg-color-1: color($bgcolor0 tint(17%));
 
-      --bg-color-2: rgb(245, 229, 213);
-      --bg-color-3: rgb(215, 193, 169);
+    --bg-color-2: color($bgcolor0 tint(37%));
+    --bg-color-3: color($bgcolor0 shade(10%));
 
-      --bg-color-4: rgb(245, 215, 184);
-      --bg-color-5: rgb(240, 185, 128);
+    --bg-color-4: color($bgcolor0 saturation(100%));
+    --bg-color-5: color($bgcolor0 whiteness(50%));
 
-      --bg-color-6: rgb(222, 206, 189);
-      --bg-color-7: rgb(235, 215, 194);
-
-      /* --sidebar-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
-      /* --pagenav-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
-
-      --sidebar-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
-      --pagenav-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
-
-      --toggle-sidebar: var(--bg-color-4);
-      --toggle-pagenav: var(--bg-color-4)
-
+    --bg-color-6: color($bgcolor0 blackness(13%));
+    --bg-color-7: color($bgcolor0 saturation(50%));
   }
 }
 
@@ -263,8 +198,12 @@ footer p { clear: left; margin-bottom: 0 }
     --navbar-hv-bg-color: var(--hv-bg-color);
 
 
-    /* show and hide panel animation, for sidebar and pagenav */
-    --panel-transition-time: 1s;
+    /* --sidebar-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
+    /* --pagenav-color: linear-gradient(to right, var(--bg-color-7), var(--bg-color)); */
+
+    --sidebar-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
+    --pagenav-color: linear-gradient(to right, var(--bg-color), var(--bg-color-7));
+
 
 
     --title-color: var(--fg-color-2);
@@ -797,8 +736,7 @@ a:focus {
 }
 
 /* menu hyperlinks */
-/* .css-treeview a, .pagenav a { */
-.css-treeview a {
+.css-treeview a, .pagenav a {
 	text-decoration: none !important;
   display: block;
 }
@@ -845,6 +783,8 @@ ul>li.pagelink, div.css-treeview>li.pagelink {
   margin-right: -15px;
 
   padding-right: 15px;
+
+
 }
 
 /* top navbar - ol list items */
@@ -972,32 +912,16 @@ ul {
 }
 */
 #navbuttons-zzz {
-	z-index: 99999 !important;
+	z-index: 2000;
 	/*z-index: 1030;*/
-  /* top: -10px; */
-  /* margin-left: 17px; */
-  /* margin-left: 70px; */
-
-  /* padding-top: 12px; */
-  padding-top: 2px;
-  /* padding-left: 5px; */
-  /* padding-bottom: 12px; */
-  /* left: 0px; */
-
-  /* position: absolute; */
-  position: fixed;
-
-  /* display: inline-flex; */
-  /* position: relative; */
-  /* display: inline-block; */
-  display: block;
-  /* left: -100%; */
-  left: 65px;
-  top: 50px;
+	margin-left: 17px;
+	position: absolute;
+	display: inline-flex;
+	left: -100%;
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (--hide-pagenav) {
     /* dissapear just the pagenav */
 	#content-zzz {
 		/* margin-left: 250px; */
@@ -1028,16 +952,6 @@ ul {
   height: 100%;  
   /* padding-left: 10px; */
   /* padding-right: 10px; */
-
-
-  line-height: 1em;
-  text-align: right;
-  float: right;
-
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
 }
 
 /* .checkbox-disabled {
@@ -1047,15 +961,10 @@ ul {
 .checkbox-div {
   margin: 0px !important;
   line-height: var(--navbar-height) !important;
-  width: 35px;
-  /* height: 100px;   */
-
+  width: 100%;
+  height: 100%;  
   padding-left: 10px;
   padding-right: 10px;
-
-  text-align: center;
-
-
 }
 
 .hidden-checkbox:checked ~ div {
@@ -1083,23 +992,17 @@ ul {
 #content-zzz {
   /* margin-left: 0px; */
   /* margin-left: 500px; */
-  /* transition: margin-left 1s; */
-  transition-duration: 0.25s;
-  transition-delay: 0s;
-  transition-property: left, width, transform;
-  will-change: left, width;
-
-  left: 250px;
+  transition: margin-left 1s;
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (--hide-sidebar) {
 
   /* dissapear both sidebar and navbar */
   #content-zzz {
     /* margin-left: 0px; */
     /* margin-left: 500px; */
-    transition: margin-left 0.5s;
+    transition: margin-left 1s;
   }
 
   #pagenav-zzz {
@@ -1177,7 +1080,7 @@ ul {
 }
 
 .navbar-toggle:hover, .navbar-toggle:active {
-  /* background: var(--navbar-color) !important; */
+  background: var(--navbar-color) !important;
 }
 
 a>i.fa {
@@ -1186,118 +1089,28 @@ a>i.fa {
   color: var(--link-color);
 }
 
-
-#toggle_sidebar {
-  position: fixed !important;
-  /* display: inline-block !important; */
-
-  /* background: var(--sidebar-color); */
-  background: var(--toggle-sidebar);
-  /* background: #ffff00; */
-
-  height: 100%;
-  z-index: 750;
-
-  height: 100% !important;
-}
-
-
-#toggle_pagenav {
-  position: fixed !important;
-
-  /* background: var(--sidebar-color); */
-  background: var(--toggle-pagenav);
-  /* background: #00ff00 !important; */
-  z-index: 750;
-
-  height: 100% !important;
-  /* padding-top: 35px !important; */
-
-  /* text-align: top !important; */
-  /* vertical-align: top !important; */
-  /* top: 0px !important; */
-  
-}
-
-
-
-
-.pagenav-toggle {
-
-  /* background: #00ff00 !important; */
-  height: 100%;
-
-  /* z-index: 750; */
-
-
-  /* background: var(--navbar-color) !important; */
+.navbar-toggle {
+  background: var(--navbar-color) !important;
 
   /* display: inline-block; */
-  /* min-height: var(--navbar-height) !important; */
-  /* max-height: var(--navbar-height) !important; */
-  /* height: var(--navbar-height) !important; */
+  min-height: var(--navbar-height) !important;
+  max-height: var(--navbar-height) !important;
+  height: var(--navbar-height) !important;
   /* font-size: 10px !important; */
   /* line-height: 10px !important; */
 
-  /* border: 0px; */
-  /* margin: 0px; */
-  /* padding: 0px; */
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
 
-  /* padding-left: 10px; */
-  /* padding-right: 10px; */
-  /* left: 135px; */
-  left: 0px; 
-  /* left: 35px; */
-
-  display: block !important;
-  /* display: block !important; */
-  /* display: inline-block !important; */
-  position: absolute !important;
-  /* position: relative !important; */
-  /* position: absolute !important; */
-  /* position: fixed !important; */
-
-  /* overflow-y: auto; */
-
-  /* padding-top: 35px; */
-
+  padding-left: 10px;
+  padding-right: 10px;
+  right: 10px;
 }
-
-
-
-
-.sidebar-toggle {
-
-  display: block !important;
-  position: absolute !important;
-
-  padding-top: 35px;
-  /* width: 35px; */
-
-  /* line-height: 1em; */
-  /* text-align: right; */
-
-
-  /* bottom: 0px; */
-  /* height: calc(100% - 35px); */
-  /* height: 100%; */
-  /* z-index: 750; */
-  /* background: var(--sidebar-color); */
-
-  background: #ffff00;
-
-}
-
-
-
-
 
 .navbar-corner {
   float: left;
   margin: 0;
-  margin-right: 35px;
-  /* width: 100px; */
-
   /* display: inline-block !important; */
   /* display: inline-flex !important; */
   /* display: inline !important; */
@@ -1309,23 +1122,15 @@ a>i.fa {
   /* left: 70px; */
   /* position: absolute !important; */
   /* position: fixed !important; */
-  /* position: relative !important; */
+  position: relative !important;
   /* position: sticky !important; */
   /* position: static !important; */
-
 }
-
-
-
 
 .navbar-left {
 /* #navbar-left { */
 
-  margin: 0;
-  position: absolute !important;
-  float: left !important;
-
-
+  /* float: left; */
   margin: 0;
   /* display: inline-block !important; */
   /* display: inline-flex !important; */
@@ -1339,20 +1144,6 @@ a>i.fa {
   /* left: 170px; */
   position: absolute !important;
 
-}
-
-.navbar-left:before {
-  content:" ";
-  position: absolute;
-  pointer-events:none;
-  /* right: 211px !important; */
-  right: 61px !important;
-  height: var(--navbar-height);
-  width: var(--navbar-height);
-  /* border: 1px solid #000000; */
-
-  /* background-image: linear-gradient(to right, rgba(255,255,255,0), var(--navbar-color)); */
-  background-image: linear-gradient(to right, rgba(255,255,255,0), var(--bg-color));
 }
 
 .navbar-right {
@@ -1434,7 +1225,7 @@ a>i.fa {
         float: left;
     }
     .navbar-toggle {
-        /* display: none; */
+        display: none;
     }
     .navbar-nav.navbar-left {
        float: left;
@@ -1453,6 +1244,12 @@ a>i.fa {
         /*padding-bottom: 15px;*/
     }
 /* } */
+
+/* going narrower, when menu appears, and when the sidebar dissapears */
+@media only screen and (--hide-navbar) {
+
+
+}
 
 
 .site-header {
@@ -1530,8 +1327,7 @@ line-height: 50px; }
 	/*overflow-y: auto;*/
 
 	/*margin-left: 450px;*/
-  /* margin-left: 250px; */
-  margin-left: 285px;
+	margin-left: 250px;
 
 	/*left: 0px;*/
 	/*right: 0px;*/
@@ -1548,8 +1344,6 @@ line-height: 50px; }
   position: fixed;
   /*width: 200px;*/
   width: 250px;
-  /* width: 285px; */
-  margin-left: 35px;
   padding-left: 15px;
   padding-right: 15px;
 
@@ -1559,59 +1353,49 @@ line-height: 50px; }
 
   /*overflow-y: scroll*/
   overflow-y: auto;
-  /* top: 50px; */
+
 
   /* this is needed for when 2nd pane, pagenav is hidden, and panel-b slides behind panel-a */
   /* background: #ffff00; */
   background: var(--sidebar-color);
-  z-index: 500;
+  z-index: 9999;
 }
 
 
  .panel-a, .scrollable {
-  /* transition: var(--panel-transition-time); */
-  /* transition: 1s; */
-  /* transition: 1s; */
-  margin-left: 0px;
-  /* margin-left: -250px; */
+  /* margin-left: 0px; */
+  margin-left: -250px;
  }
 
 
  .panel-b {
-  /* transition: var(--panel-transition-time); */
-  /* transition: 1s; */
-  /* transition: 0s; */
   /* margin-left: 250px; */
   /* margin-left: 0px; */
   z-index: 0;
-  /* z-index: 99999; */
-
   /* background: #ff00ff;   */
-
-  left: 285px; 
-  /* position: absolute !important; */
-  position: relative !important;
-
-  width: calc(100% - 285px);
-  /* width: 100%; */
  }
 
- .panel-c {
-  /* transition: var(--panel-transition-time); */
-  /* transition: 1s; */
-  /* transition: 0s; */
-  /* margin-left: 250px; */
-  margin-left: 0px;
-  z-index: 0;
-  /* z-index: 99999; */
 
-  /* background: #ff00ff;   */
+.panel-a-visible {
+  margin-left: 0px !important;
+  transition: 1s;
+}
 
-  left: 0px; 
-  /* position: absolute !important; */
-  position: relative !important;
- }
+.panel-a-hidden {
+  margin-left: -250px !important;
+  transition: 1s;
+}
 
+
+.panel-b-visible {
+  margin-left: 250px !important;
+  transition: 1s;
+}
+
+.panel-b-hidden {
+  margin-left: 0px !important;
+  transition: 1s;
+}
 
 
 
@@ -1622,7 +1406,6 @@ line-height: 50px; }
   /*margin-left: 200px;*/
   /* margin-left: 250px; */
   width: 250px;
-  margin-left: 35px;
 
   padding-left: 15px;
   padding-right: 15px;
@@ -1631,43 +1414,7 @@ line-height: 50px; }
   height: calc(100% - var(--navbar-height));
 
   overflow-y: auto;
-  z-index: 500;
-
-  transform: translateX(0px);
-  will-change: transform;
-
 }
-
-/* .panel-a-visible {
-  margin-left: 0px !important;
-}
-
-.panel-a-hidden {
-  margin-left: -250px !important;
-}
-
-
-.panel-b-visible {
-  margin-left: 250px !important;
-}
-
-.panel-b-hidden {
-  margin-left: 0px !important;
-} */
-
-/* @media (--hide-pagenav) {
-  .panel-b {
-    margin-left: 0px !important;
-  }
-}
- */
-
-/* @media (--hide-sidebar) {
-  .panel-a {
-    margin-left: -250px !important;
-  }
-}
- */
 
 /*.silentscroll:hover {
 	overflow-y: scroll;

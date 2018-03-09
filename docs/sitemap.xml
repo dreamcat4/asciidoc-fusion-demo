@@ -3,128 +3,43 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section2/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+    <loc>https://dreamcat4.github.io/asciidoc-fusion-demo/reference/asciidoctor.org/</loc>
+    <lastmod>2018-03-09T08:57:22+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section2/a/b/c/d/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+    <loc>https://dreamcat4.github.io/asciidoc-fusion-demo/theme-test/</loc>
+    <lastmod>2018-03-09T08:58:05+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/s_1_2a/a/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+    <loc>https://dreamcat4.github.io/asciidoc-fusion-demo/</loc>
+    <lastmod>2018-03-09T08:53:43+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/s_1_2a/b/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+    <loc>https://dreamcat4.github.io/asciidoc-fusion-demo/reference/onemoregres/</loc>
+    <lastmod>2018-03-09T08:56:16+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/s_1_2a/c/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+    <loc>https://dreamcat4.github.io/asciidoc-fusion-demo/reference/</loc>
+    <lastmod>2018-03-09T08:56:16+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/s_1_2b/a/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
+    <loc>https://dreamcat4.github.io/asciidoc-fusion-demo/reference/markdown/</loc>
+    <lastmod>2018-03-09T08:57:48+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/s_1_2b/b/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/s_1_2b/c/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section2/a/b/c/d/hugo-rocks/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/hugo-rocks/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/</loc>
-    <lastmod>2017-06-07T15:58:16+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/s_1_2a/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/s1_1/s_1_2b/</loc>
-    <lastmod>2017-06-08T11:04:59+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section2/a/</loc>
+    <loc>https://dreamcat4.github.io/asciidoc-fusion-demo/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://dreamcat4.github.io/hugotest/section2/a/b/</loc>
+    <loc>https://dreamcat4.github.io/asciidoc-fusion-demo/tags/</loc>
     <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section2/a/b/c/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/markdown/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/markdown/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/markdown/markdown-here/markdown-cheatsheet/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/section1/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/markdown/markdown-here/tips-and-tricks/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/markdown/jonschlinkert/</loc>
-  </url>
-  
-  <url>
-    <loc>https://dreamcat4.github.io/hugotest/markdown/markdown-here/</loc>
   </url>
   
 </urlset>
