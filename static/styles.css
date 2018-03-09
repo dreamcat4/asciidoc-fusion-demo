@@ -172,8 +172,8 @@ footer p { clear: left; margin-bottom: 0 }
 
 
 
-    --hide-pagenav: 768px;
-    --hide-sidebar: 1024px;
+    --hide-pagenav: 960px;
+    --hide-sidebar: 1280px;
 
 
 
@@ -997,7 +997,7 @@ ul {
 }
 
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 960px) {
     /* dissapear just the pagenav */
 	#content-zzz {
 		/* margin-left: 250px; */
@@ -1093,7 +1093,7 @@ ul {
 }
 
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1280px) {
 
   /* dissapear both sidebar and navbar */
   #content-zzz {
