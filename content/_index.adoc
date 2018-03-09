@@ -1,0 +1,14 @@
++++
+weight = 10
+title = "Asciidoc Fusion Demo"
++++
+include::config.adoc[]
+include::README.adoc[]
+
+== Demo Site Content
+
+[source]
+----
+include::content/tree.txt[lines=1..-1,indent=0]
+----
+

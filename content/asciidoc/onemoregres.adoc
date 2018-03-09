@@ -1,0 +1,469 @@
++++
+weight = 10
+categories = []
+date = "2017-06-29T16:48:58+01:00"
+tags = []
+title = "OneMoreGres"
+type = "page"
++++
+
+
+== Asciidoc(tor) cheatsheet
+:experimental:
+:source-highlighter: highlightjs
+:source-language: asciidoc
+:stylesheet: cheatsheet.css
+:noheader:
+:nofooter:
+:icons: font
+
+[cols="2*"]
+|===
+
+
+a|
+legend: *keywords*, _user input_
+
+.formatting
+++_++_italic_++_++,
+i++__++__tali__++__++c,
+++*++*bold*++*++,
+b++**++**ol**++**++d,
+++`++`monospace`++`++,
+mo++``++``no``++``++space,
+++^++^superscript^++^++,
+++~++~subscript~++~++,
+++'`++single quoted++`'++,
+++"`++double quoted++`"++,
+++\++\*not-bold*,
+++[red]#++[red]#styled#++#++,
+s++[small]##++[small]##tyle##++##++d,
+
+.attribute
+**:**_attribute_**:** _value_ \| **\{set:**_attribute_**:**_value_**}**
+-> **{**_attribute_**}** = _value_ +
+**:**_attribute_**!:** \| **:!**_attribute_**:** \| **\{set:**_attribute_**!}**
+-> {_attribute_} = {} +
+*:attribute-missing:* [*skip \| drop \| drop-line \| warn*] +
+*:attribute-undefined:* [*drop \| drop-line*] +
+*\\{not-reference}*
+
+**\{counter:**_name_**}** \| **\{counter:**_name_**:**_init_**}**
+-> print pass:[++]_name-value_ +
+**:!**_name_**:** -> {} +
+**{counter2**:_name_**}** -> pass:[++]_name-value_
+
+
+a|.title
+*=* _Document title_**:** _subtitle_ +
+*:toc:* [*auto \| preamble \| left \| right \| macro* (**toc::[]**)] +
+*:toc-title:* _text_ +
+*:toclevels:* [0-5] +
+_preamble-text_ +
+*==* Level 1 +
+*[discrete]* - no structure and TOC +
+*==* Level 1 +
+*:sectnums*: +
+*===* [red]#1.1.# Level 2 +
+*:leveloffset:* +2 +
+*==* 1.1.1. Level [red]#3# +
+*:sectnumlevels:* 2 +
+*==* Level 3 +
+*[colophon \| abstract \| preface \| dedication \| part introduction
+\| appendix \| glossary \| bibliography \| index]* +
+*==* Styled level 3 +
+
+
+*:idprefix:* _char_ +
+*:idseparator:* _char_ +
+*:sectids:*
+*:sectanchors:*
+*:sectlinks:* +
+*:appendix-caption:* _text_ +
+{nbsp}
+
+
+a|.header
+*=* {*doctitle*}{*title-separator*} _subtitle_ +
+{*firstname*} {*middlename*} {*lastname*} <{*email*}>; {firstname_2} {lastname_2} <{email_2}> +
+{*revnumber*}, {*revdate*}: {*revremark*} +
+
+{*author*} - {[red]##f##irstname} {[red]##m##iddlename} {[red]##l##astname} +
+{*authors*} - {author}, {author_2} +
+{*authorinitials*} - [red]#fml#
+
+*:description:*
+*:keywords:*
+*:title:*
+*:version-label:*
+*:copyright:*
+*:orgname:*
+
+*:docinfo:*
+*:docinfo1:*
+*:docinfo2:*
+
+*:no-header-footer:*
+*:noheader:*
+*:nofooter:*
+*:notitle:*
+*:showtitle:*
+*:fragment:*
+
+
+a|.block
+**.**_title_ (no space after .) +
+**[[**_id_**]]** +
+**[**_block-name_, _block-attributes_**]** +
+_delimeter_ +
+_block-text_ +
+_delimeter_
+
+[cols="2*", options="header"]
+!===
+!delimiter !blockname +
+!`++////++` !comment +
+!`++====++` !*[example]* +
+!`++```++` {nbsp} !*[listing \| source]* +
+!`++----++` !*[listing \| source]* +
+!`++....++` !*[literal]* +
+!`++--++` {nbsp}{nbsp}{nbsp} !open block +
+!`pass:[++++]` !*[pass \| stem]* +
+!`++____++` !*[quote \| verse]* +
+!`++****++` !*[sidebar]* +
+!`++\|===++` !table
+
+a|.paragraph
+_paragraph 1_ +
+_paragraph 1_
+
+_paragraph 2_
+
+*:hardbreaks:* \| *[%hardbreaks]*
+\| _paragraph 1_ *+* _paragraph 2_
+
+++''' \| --- \| - - - \| *** \| * * *++  - hline +
+<<< - page break +
+ // - comment
+
+
+.conditional
+**ifdef::**_variable_**[]** \| **ifndef::**_variable_**[]** +
+**endif::**_variable_**[]** \| **endif::[]** +
+**ifdef::**_variable_**[**_inline_text_**]** +
+ +
+**ifdef::**_first,second_**[]** - any +
+**ifdef::**_first+second_**[]** - all +
+ +
+**ifeval::[**{sectnumlevels} > 1**]** +
+**ifeval::[**"\{backend}" == "html5"**]** +
+**++== != < > <= >=++**
+
+
+a|.list
+*[square \| circle \| disc \| none \| unstyled]* +
+* unordered 1 +
+\** unordered 1.1 +
+ // +
+* unordered 2 +
+- unordered 3 +
++ +
+unordered 3 text +
+- [*] checked +
+- [x] checked +
+- [ ] not checked
+
+*[arabic \| decimal \| decimal \| decimal-leading-zero \|
+loweralpha \| lower-alpha \| upperalpha \| upper-alpha \|
+lowerroman \| lower-roman \| upperroman \| upper-roman \| lowergreek, +
+start*=_n_] +
+. ordered
+
+*[horizontal]* +
+_term_**::** _definition_ +
+{nbsp}{nbsp}  _subterm_**:::** _definition_
+
+
+a|.table
+*[cols*,
+ *format*=[*csv \| dsv \| psv*], +
+ *separator*=['\|' \| '!' \| _char_], +
+ *options*=[*header \| footer \| breakable \| unbreakable \| autowidth*], +
+ *frame*=[*topbot \| sides \| none \| all*], +
+ *grid*=[*rows \| cols \| none \| all*], +
+ *caption*, *width*, +
+ *align*=[*left \| right \| center*], +
+ *float*=[*left \| right*]
+] +
+\|=== +
+_cell-spec_\|_cell[1,1]_ {nbsp}{nbsp}  _cell-spec_\|_cell[1,2]_ +
+ +
+_cell-spec_\|_cell[2,1]_ +
+_cell-spec_\|_cell[2,2]_ +
+\|=== +
+
+*cols*="3*" = "1,1,1" = "33%,33%,33%"
+*<^>* - halign, *.<^>* - valign
+*a* - asciidoc, *e* - emphasis, *h* -header, *d* - default
+*l* - literal, *m* - monospaced, *s* - strong, *v* - verse
+
+_cell-spec_: _n_++*++ - repeat, _n_+ - colspan, ._n_+ - rowspan, *<^>*, *.<^>*, *aehdlmsv*
+
+
+a|.link
+*http, https, ftp, irc, mailto, ++e@mail.com++* +
+**link++:++**_url_**[**_text, target, role_**]** +
+ +
+_id_=[_id_ \| _external-file#id_] +
+**[[**_id_**]]** \| **anchor++:++**__id__**[**_ref-text_**]**
+\| **[[**_id, ref-text_**]]** +
+`...` +
+**<<**_id, ref-text_**>>** \| **xref++:++**_id_**[**_ref-text_**]** +
+
+.includes
+**include::**_file.txt_**[leveloffset**=+-_n_, +
+*lines*=7;14..25;28..-1, +
+*indent*=_n_, +
+*tags*=_tag1;tag2_**]** +
+(# **tag::**_tag1_**[]** ... # **end::**_tag1_**[]**)
+
+.bibliography
+**<<**_bib-item_**>>**. +
+`...` +
+*[bibliography]* +
+*- [[[bib-item]]]* _<description>_ +
+
+_text_**.footnote**:**[**_text_**]** +
+_text_**.footnoteref**:**[**_id, text_**]** +
+_text_**.footnoteref**:**[**_id_**]**
+
+
+a|.image
+*:figure-caption:* *:imagesdir:* +
+**image++:++**_inline.jpg_**[]** +
+**image::**_file.jpg_**[**_alt_**]** +
+**image::**_file.jpg_**[caption**, *title*, *alt*, *width*, *height*, *link*, +
+*float*=[*left \| right*], +
+*align*=[*text-left \| text-right \| text-center*], +
+*role*=[*left \| right \| th \| thumb \| related \| rel*], +
+*pdfwidth*, *scaledwidth*, *scale* **]**
+
+*pdfwidth* (pdf), *scaledwidth* (docbook),
+*scale* (docbook) - _n_[*pt*(def) \| *px* \| *pc* \| *cm* \| *mm* \| *in* \| *%* \| *vw*]
+
+.video and audio
+**video::**_file.mp4_**[***title*, *width*, *height*, *start*, *end*, *poster*, *theme*, *lang*, +
+*options*=[*autoplay \| loop \| modest \| nocontrols \| nofullscreen*] **]** +
+**video::**rPQoq7ThGAU[*youtube* \| *vimeo*] +
+
+**audio::**_file.mp3_**[***options*=[*autoplay \| loop \| controls \| nocontrols*] **]**
+
+
+
+a|.quote
+**[quote**, _attribution, citation title and information_**]** +
+pass:[____] +
+_quote_ +
+pass:[____] +
+ +
+**"**_quote_**"** +
+`--` _attribution, citation title and information_ +
+ +
+> > _quote_ +
+> _quote_
+
+.verse
+*[verse*, _attribution, verse title and information_**]** +
+pass:[____] +
+_verse_ +
+pass:[____]
+
+
+
+a|.source code
+*:source-highlighter:* [*pygments \| coderay \| highlightjs \| prettify*] +
+*:source-language:* +
+ +
+*[source*,_language_**]** +
+`----` +
+code *<1>* +
+`----` +
+*<1>* - callout (*++<!--1-->++* for xml) +
+ +
+++```++_language_ +
+_code_ // *<2>* +
+++```++ +
+*<2>* - non-selectable (// # ;;) +
+
+
+.admonition
+_admonition_=[*NOTE \| TIP \| IMPORTANT \| WARNING \| CAUTION*] +
+
+**[**_admonition_**]** +
+_text_ +
+_admonition_**:** _inline-text_
+
+
+a|.math
+*:stem:* [*latexmath \| asciimath* (def)] +
+ +
+*[stem \| asciimath \| latexmath]* +
+pass:[++++] +
+_math_ +
+pass:[++++] +
+ +
+*stem:***[**sqrt(4) = 2**]** +
+*latexmath:***[**C = \alpha + \beta Y^{\gamma} + \epsilon**]**
+
+
+.icon
+*:icons:* _font_ +
+*icon***:**_name_**[size**=[_n_**x \| lg \| fw**], +
+*rotate*=[*90 \| 180 \| 270*], +
+*flip*=[*horizontal \| vertical*], +
+*link*, *window*, *alt*, *width*, *height*, *title*, *role* **]**
+
+
+a|.asciidoctor-diagram
+**[**_type_, _generated-file-name_, _image-format_**]  **  +
++....+ +
+_diagram text_ +
++....+
+
+_type_**::**__source-file__**[**_generated-file-name_**]**
+
+_type_=[*actdiag \| blockdiag \| ditaa \| graphviz \| meme \|
+mermaid \| nwdiag  \| packetdiag\| plantuml \| rackdiag \|
+seqdiag \| shaape \| wavedrom* ] +
+_image-format_=[*gif* \| *png* \| *svg* \| *txt*]
+
+`asciidoctor *-r asciidoctor-diagram* _file_`
+
+
+a|.asciidoctor-pdf
+*:autofit-option:* *:pagenums:* *:pdfmark:* +
+*:chapter-label:* _Chapter_ +
+*:front-cover-image++:++* _image++:++cover.pdf[]_ +
+*:back-cover-image++:++* _image..._ +
+*:media:* [*screen* \| *print* \| *prepress*] +
+*:page-background-image++:++* _image..._ +
+*:pdf-page-layout:* [*portrait* \| *landscape*] +
+*:pdf-page-size:* [_name_ \| _w x h_] +
+*:text-alignment:* [*left \| right \| center*] +
+*:title-logo-image++:++* _image..._ +
+*:title-page-background-image++:++* _image..._
+
+*:pdf-stylesdir:*
+*:pdf-style:*
+*:pdf-fontsdir:*
+
+`*asciidoctor-pdf* _file_` \| +
+`asciidoctor *-b pdf -r asciidoctor-pdf* _file_`
+
+
+a|.localization
+[%hardbreaks]
+*:appendix-caption:*
+*:caution-caption:*
+*:chapter-label:*
+*:example-caption:*
+*:figure-caption:*
+*:important-caption:*
+*:last-update-label:*
+*:listing-caption:*
+*:manname-title:*
+*:note-caption:*
+*:preface-title:*
+*:table-caption:*
+*:tip-caption:*
+*:toc-title:*
+*:untitled-label:*
+*:version-label:*
+*:warning-caption:*
+
+
+a|.attribute substitution
+{nbsp} +
+[cols="2*"]
+!===
+!*blank* - ++nothing++ +
+!*empty* - ++nothing++ +
+!*sp* - ++space++ +
+!*nbsp* - ++&#160;++ +
+!*zwsp[4]* - ++&#8203;++ +
+!*wj[5]* - ++&#8288;++ +
+!*apos* - {apos} +
+!*quot* - {quot} +
+!*lsquo* - {lsquo} +
+!*rsquo* - {rsquo} +
+!*ldquo* - {ldquo} +
+!*rdquo* - {rdquo} +
+!*deg* - {deg} +
+!*plus* - {plus} +
+!*brvbar* - {brvbar} +
+!*vbar* - {vbar} +
+!*amp* - {amp} +
+!*lt* - {lt} +
+!*gt* - {gt} +
+!*startsb* - {startsb} +
+!*endsb* - {endsb} +
+!*caret* - {caret} +
+!*asterisk* - {asterisk} +
+!*tilde* - {tilde} +
+!*backslash* - {backslash} +
+!*backtick* - {backtick} +
+!*two-colons* - {two-colons} +
+!*two-semicolons* - {two-semicolons} +
+!*cpp* - {cpp}
+!===
+
+
+a|.environment attribute
+*:imagesdir:* ./images +
+*:iconsdir:* ./icons +
+*:stylesdir:* ./styles +
+*:scriptsdir:* ./js +
+
+*\{asciidoctor}* *\{asciidoctor-version}* +
+*\{backend}* *\{basebackend}* +
+*\{docdate}* *\{docdatetime}* +
+*\{docdir}* *\{docfile}* +
+*\{docname}* *\{doctime}* +
+*\{doctype}* *\{embedded}* +
+*\{filetype}* *\{htmlsyntax}* +
+*\{localdate}* *\{localdatetime}*  *\{localtime}* +
+*\{outdir}* *\{outfile}* *\{outfilesuffix}* +
+*\{safe-mode-level}* *\{safe-mode-name}* *\{safe-mode-unsafe}*
+*\{safe-mode-safe}* *\{safe-mode-server}* *\{safe-mode-secure}* +
+*\{user-home}* +
+
+
+a|.named substitution
+subs=[*none* \| *normal* \| *verbatim* \| *specialchars* \| *specialcharacters* \| *quotes*
+\| *attributes* \| *replacements* \| *macros* \| *post_replacements*]
+
+.text replacement
+++(C)  ++       - `©`        +
+++(R)  ++       - `®`        +
+++(TM) ++       - `™`        +
+++--   ++       - `—`        +
+++...  ++       - `…`​        +
+++->   ++       - `→`        +
+++=>   ++     	- `⇒`        +
+++<-   ++       - `←`        +
+++<=   ++       - `⇐`        +
+++Sam's++       - `Sam’s`
+
+
+.experimental
+*:experimental:* +
+**++kbd++:[**_F11_**]** - keyboard image +
+**menu:**_Menu_**[**_Submenu_ **>** _Item_**]** +
+**++btn++:[**_OK_**]** - buttons
+
+
+|===
+
+
+//TODO a|.docinfo
+//TODO a|.index
