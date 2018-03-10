@@ -54,12 +54,7 @@ These are the theme colors. The colors `bg-color-0`, `fg-color-0` and `fg-color-
 </table>
 ++++
 
-.Previous guides
-* guide #1 https://github.com/zfsonlinux/zfs/wiki/Ubuntu-16.04-Root-on-ZFS
-* guide #2 https://help.ubuntu.com/community/encryptedZfs
-
-
-TIP: Before you begin, you may also need an (additional) temporary installation disk, which can be anything. Unless you are installing onto dual-disks. In which case one of them can be used / re-used for this purpose. At minimum an 8gb usb key. This temporary drive to install ubuntu upon and is only used during the installation process. After which time it can be disposed of.
+TIP: If you want to change the theme colors properly, you will need to install the node.js dependancies with `npm install` which should then create a local `node_modules/` subfolder. And populate it with all the build time dependancies required for running `gulp` allongside hugo concurrently. However if you cannot get the toolchain working, then you can instead peek the color trasform operations in the postcss file, and just calculate the derived colors yourself manually. Using the help of a color scheme website. And type them directly into the `styles.css` file. However doing this breaks the postcss build chain.
 
 == Source Code Highlighting
 
