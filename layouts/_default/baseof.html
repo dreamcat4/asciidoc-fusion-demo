@@ -50,13 +50,13 @@
 			<div class="navbar-default navbar-fixed-top navbar-override">
 
 
-					<nav class="navbar-corner">
+					<nav class="navbar-left">
 						<ol class="nav navbar-nav">
 							<li class="pagelink"><a class="navlink" href="{{ .Site.Home.RelPermalink }}#">Home</a></li>
 						</ol>
 					</nav>
 
-					<nav class="navbar-left" id="navbar-left" style="">
+					<nav class="navbar-center" id="navbar-center" style="">
 						{{ partial "sections-nav.html" . }}
 					</nav>
 							<nav class="navbar-right" id="navbar-right">
@@ -115,7 +115,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 					<!-- </div> -->
 
 		<div class="sidebar-toggle">
-				<nav class="navbar-corner" title="Toggle Site Navigation">
+				<nav class="navbar-left" title="Toggle Site Navigation">
 					<ol class="nav navbar-nav">
 						<!-- <li class="pagelink"><a class="navlink" href=""><i class="fa fa-list-ul"></i></a></li> -->
 						<!-- <li class="pagelink"><a class="navlink" href=""><i class="fa fa-caret-square-o-right"></i></a></li> -->
@@ -182,7 +182,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 				<div class="pagenav-toggle">
 
 
-					<nav class="navbar-corner pagenav-toggle" title="Toggle Page Navigation">
+					<nav class="navbar-left pagenav-toggle" title="Toggle Page Navigation">
 						<ol class="nav navbar-nav">
 							<!-- <li class="pagelink"><a class="navlink" href=""><i class="fa fa-list-ul"></i></a></li> -->
 							<!-- <li class="pagelink"><a class="navlink" href=""><i class="fa fa-bars"></i></a></li> -->
@@ -415,7 +415,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 
 							$('.panel-a').css('transition', str_transition_time);
 							$('#navbuttons-zzz').css('transition', str_transition_time);
-							$('#navbar-left').css('transition', str_transition_time);
+							$('#navbar-center').css('transition', str_transition_time);
 
 							if(matchmedia_hide_sidebar())
 							{
@@ -429,10 +429,10 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 								// $('#navbuttons-zzz').css('left','70px');
 								$('#navbuttons-zzz').css('left','100px');
 								$('#navbuttons-zzz').css('top','0px');
-								// $('#navbar-left').css('display', 'none');
-								$('#navbar-left').css('visibility', 'hidden');
-								// $('#navbar-left').css('opacity', '0%');
-								// $('#navbar-left').fadeOut(1);
+								// $('#navbar-center').css('display', 'none');
+								$('#navbar-center').css('visibility', 'hidden');
+								// $('#navbar-center').css('opacity', '0%');
+								// $('#navbar-center').fadeOut(1);
 							}
 							else
 							{
@@ -445,10 +445,10 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 								// $('#navbuttons-zzz').css('left','-100%');
 								$('#navbuttons-zzz').css('left','65px');
 								$('#navbuttons-zzz').css('top','50px');
-								// $('#navbar-left').css('display', 'flex');
-								$('#navbar-left').css('visibility', 'visible');
-								// $('#navbar-left').css('opacity', '100%');
-								// $('#navbar-left').fadeIn(1);
+								// $('#navbar-center').css('display', 'flex');
+								$('#navbar-center').css('visibility', 'visible');
+								// $('#navbar-center').css('opacity', '100%');
+								// $('#navbar-center').fadeIn(1);
 							}
 
 						};
@@ -569,7 +569,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										$('#navbuttons-zzz').css('transition', '0.2s');
 										// $('#navbuttons-zzz').css('left','100px');
 										$('#navbuttons-zzz').css('top','00px');
-										$('.navbar-left').css('visibility','hidden');
+										$('.navbar-center').css('visibility','hidden');
 
 
 										// then put it back to how it was
@@ -588,7 +588,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										$('#navbuttons-zzz').css('transition', '0.2s');
 										// $('#navbuttons-zzz').css('left','100px');
 										$('#navbuttons-zzz').css('top','50px');
-										$('.navbar-left').css('visibility','initial');
+										$('.navbar-center').css('visibility','initial');
 
 									}
 								}
@@ -608,7 +608,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										// $('#navbuttons-zzz').css('transition', '0.2s');
 										$('#navbuttons-zzz').css('left','100px');
 										$('#navbuttons-zzz').css('top','0px');
-										$('.navbar-left').css('visibility','hidden');
+										$('.navbar-center').css('visibility','hidden');
 
 
 									} else {
@@ -624,7 +624,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 										// $('#navbuttons-zzz').css('transition', '0.2s');
 										$('#navbuttons-zzz').css('left','65px');
 										$('#navbuttons-zzz').css('top','50px');
-										$('.navbar-left').css('visibility','initial');
+										$('.navbar-center').css('visibility','initial');
 									}
 								}
 
@@ -763,7 +763,7 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 
 
 
-							var navbar_left_width = $("#navbar-left").width();
+							var navbar_left_width = $("#navbar-center").width();
 							var navbar_right_width = $("#navbar-right").width();
 							// var navbar_collapse_width = navbar_left_width + navbar_right_width;
 

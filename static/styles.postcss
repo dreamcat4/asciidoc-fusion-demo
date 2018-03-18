@@ -1207,7 +1207,7 @@ ul {
   max-height: var(--navbar-height) !important;
   height: var(--navbar-height) !important;
 
-  /* parent div of navbar-left needs overflow hidden set for the child */
+  /* parent div of navbar-center needs overflow hidden set for the child */
   overflow: hidden !important;
 }
 
@@ -1353,7 +1353,7 @@ a>i.fa {
 }
 
 
-.navbar-corner {
+.navbar-left {
   /* float: left; */
   margin: 0;
   margin-right: 35px;
@@ -1380,8 +1380,8 @@ a>i.fa {
 
 
 
-.navbar-left {
-/* #navbar-left { */
+.navbar-center {
+/* #navbar-center { */
 
   margin: 0;
   /* position: absolute !important; */
@@ -1404,7 +1404,7 @@ a>i.fa {
   text-align: center;
 }
 
-.navbar-left:before {
+.navbar-center:before {
   content:" ";
   position: absolute;
   pointer-events:none;
@@ -1501,7 +1501,7 @@ a>i.fa {
     .navbar-toggle {
         /* display: none; */
     }
-    .navbar-nav.navbar-left {
+    .navbar-nav.navbar-center {
        float: left;
        margin: 0;
     }
