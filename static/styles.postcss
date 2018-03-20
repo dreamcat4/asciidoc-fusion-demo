@@ -1347,11 +1347,23 @@ a>i.fa {
 
 
 .navbar-default {
-
   display: flex !important;
-  justify-content: space-between !important;
+  /* justify-content: space-between !important; */
 }
 
+.navbar-child {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-left > span {
+  margin-right: auto;
+}
+
+.navbar-right > span {
+  margin-left: auto;
+}
 
 .navbar-left {
   /* float: left; */

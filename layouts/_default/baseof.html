@@ -50,29 +50,34 @@
 			<div class="navbar-default navbar-fixed-top navbar-override">
 
 
-					<nav class="navbar-left">
+				<nav class="navbar-child navbar-left">
+					<span>
 						<ol class="nav navbar-nav">
 							<li class="pagelink"><a class="navlink" href="{{ .Site.Home.RelPermalink }}#">Home</a></li>
 						</ol>
-					</nav>
+					</span>
+				</nav>
 
-					<nav class="navbar-center" id="navbar-center" style="">
+				<nav class="navbar-child navbar-center" id="navbar-center" style="">
+					<span>
 						{{ partial "sections-nav.html" . }}
-					</nav>
-							<nav class="navbar-right" id="navbar-right">
-								<ol class="nav navbar-nav" style="">
-								<li class="pagelink">
+					</span>
+				</nav>
+				<nav class="navbar-child navbar-right" id="navbar-right">
+					<span>
+						<ol class="nav navbar-nav" style="">
+							<li class="pagelink">
 
-{{ if(.Site.Params.git_icons_with_text) }}
+	{{ if(.Site.Params.git_icons_with_text) }}
 						        <a href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}" class="navlink">
 						            <i class="fa fa-pencil"></i>&nbsp;&nbsp;Edit Source
 						        </a>
-{{ else }}
+	{{ else }}
 						        <a title="Edit Source" href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/blob/master/content/{{ .Path }}" class="navlink"><i class="fa fa-pencil"></i></a>
-{{ end }}
+	{{ end }}
 
 
-								</li><li class="pagelink">
+							</li><li class="pagelink">
 								
 <a class="navlink" {{ if not .Site.Params.git_icons_with_text }} title="File Issue"{{ end }}
 {{ if(eq .Site.Params.git_host "https://github.com") }}
@@ -89,15 +94,12 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 {{ end }}
 {{ if .Site.Params.git_icons_with_text }} &nbsp;&nbsp;File Issue{{ end }}
 </a>
-								</li>
-								</ol>
-						</nav>
-
+							</li>
+						</ol>
+					</span>
+				</nav>
 			</div>
 		</div>
-
-
-
 	</header>
 
 
