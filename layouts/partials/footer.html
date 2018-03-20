@@ -1,25 +1,46 @@
 
 
-<!-- make content-header-2part -->
-<!-- make content-header-3part -->
-
-<!-- make content-footer-2part -->
-<!-- make content-footer-3part -->
-
-<!-- make definition blocks to select center section -->
-
-<!-- make css classes -->
-
-<!-- https://stackoverflow.com/questions/18781713/css-divide-width-100-to-3-column -->
-<!-- https://stackoverflow.com/questions/4767971/how-do-i-center-float-elements/4767993#4767993 -->
 
 
+<!-- https://stackoverflow.com/a/33856609 -->
+<!-- found by search term: Solution #2: Nested Flex Containers (no absolute positioning) -->
+
+<div class="footer">
+	<div class="footer-child footer-left">
+		<span>
+			by <a href="{{ .Site.Params.author_url }}">{{ .Site.Params.Author }}</a>
+		</span>
+	</div>
+	<div class="footer-child footer-center">
+		<span>
+			<a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/dreamcat4/asciidoc-fusion">Asciidoc Fusion</a>
+		</span>
+	</div>
+	<div class="footer-child footer-right">
+		<span>
+			<i>{{ .Date.Format "15:04:05 MST, 02 Jan 2006." }}</i>
+		</span>
+	</div>
+</div>
+
+<div style="margin-bottom: 20px;"></div>
 
 
-<div class="footer" style="display: flex; justify-content: space-between;">
+
+
+
+<!-- css use flexbox and "space-between" -->
+<!-- https://stackoverflow.com/a/32583512 -->
+
+<!-- <div class="footer" style="display: flex; justify-content: space-between;">
 <div class="footer2-left" style="vertical-align: top; text-align: left;">by <a href="{{ .Site.Params.author_url }}">{{ .Site.Params.Author }}</a></div><div class="footer2-center" style="vertical-align: top; text-align: center;"><a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/dreamcat4/asciidoc-fusion">Asciidoc Fusion</a></div><div class="footer2-right" style="vertical-align: top; text-align: right"><i>{{ .Date.Format "15:04:05 MST, 02 Jan 2006." }}</i></div>
 </div>
-<div style="margin-bottom: 20px;"></div>
+<div style="margin-bottom: 20px;"></div> -->
+
+
+<!-- old way: css divide width 100% to 3 column, (code now removed, see previous git commits / blame) -->
+<!-- https://stackoverflow.com/questions/18781713/css-divide-width-100-to-3-column -->
+<!-- https://stackoverflow.com/questions/4767971/how-do-i-center-float-elements/4767993#4767993 -->
 
 
 

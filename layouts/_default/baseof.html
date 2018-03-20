@@ -820,9 +820,11 @@ href="{{ .Site.Params.git_host }}/{{ .Site.Params.git_repo }}/issues/new?issuabl
 							{{ block "main" . }}This is the main content.{{ end }}
 						</div>
 						</main>
+{{ if .Site.Params.footer }}
 						<footer>
 							{{ partial "footer.html" . }}
 						</footer>
+{{ end }}
 					</div>
 				</div>
 			</div>

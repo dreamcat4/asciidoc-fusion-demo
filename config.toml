@@ -62,6 +62,7 @@ googleAnalytics = "UA-12345768-1"
 	# Wether to render the frontmatter .Title as an first <h1> in page .Content
 	section_titles = true
 	page_titles = true
+	footer = true
 
 	author = "Dreamcat4"
 	author_url = "https://github.com/dreamcat4"
